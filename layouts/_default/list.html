@@ -1,5 +1,6 @@
 {{ partial "head.html" . }}
 <div class="content container">
+  <h1 class="post-title">{{ .Section }}</h1>
   <ul class="posts">
   {{ range .Data.Pages }}
     <li><a href="{{ .Permalink }}">{{ .Title }}</a>

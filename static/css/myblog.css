@@ -1,0 +1,33 @@
+.sidebar-about h1 {
+    color: #fff;
+    margin-top: 0;
+    font-family: serif;
+    font-weight: normal;
+    font-size: 2.5rem;
+}
+
+.sidebar-nav {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.sidebar-about img {
+    margin: 0 auto 0.5rem auto;
+    width: 100px;
+    height: 100px;
+}
+@media (min-width: 48em) {
+    .sidebar-about img {
+        margin: 0 auto 0.75rem auto;
+        width: 125px;
+        height: 125px;
+    }
+}
+@media (min-width: 58em) {
+    .sidebar-about img {
+        margin: 0 auto 1rem auto;
+        width: 150px;
+        height: 150px;
+    }
+}
