@@ -1,9 +1,14 @@
+/* Decrease bottom padding to remove unnecessary scroll bars. */
+.content {
+    padding-bottom: 0rem;
+}
+
 .sidebar-about h1 {
     color: #fff;
     margin-top: 0;
     font-family: serif;
     font-weight: normal;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
 }
 
 .sidebar-nav {
@@ -34,6 +39,15 @@
     }
 }
 
+/* Improves alignment of text when list is centered for small screens */
+.sidebar-nav {
+    display: inline-block;
+}
+
+.sidebar-nav-item {
+    text-align: left;
+}
+
 /* Time stamp handling should be the same as `code`. However, proper inheritance
    is not supported with CSS, so I copied this over from `poole.css` and changed
    it according to my needs. If the styles of `code` are changed, however, this
@@ -43,12 +57,12 @@
 }
 
 .timestamp {
-    padding: .25em .5em;
     font-size: 85%;
     color: #bf616a;
     background-color: #f9f9f9;
     border-radius: 3px;
     /* Improve handling of space after time stamp. */
+    padding: .25em 0em;
     line-height: 1em;
     display: inline-block;
 }
@@ -64,8 +78,7 @@ pre {
     white-space: pre;
 }
 
-/* This is not used at the moment, but the width of code blocks could be
-   adjusted when the mouse is over the block. */
+/* Adjust width of code blocks when the mouse is over the block. */
 /* @media (min-width: 64em) { */
 /*     pre:hover { */
 /*         max-width: 50rem; */
