@@ -1,6 +1,6 @@
 /* Decrease bottom padding to remove unnecessary scroll bars. */
 .content {
-    padding-bottom: 0rem;
+    padding-bottom: 4rem;
 }
 
 .sidebar-about h1 {
@@ -80,6 +80,12 @@ pre .timestamp {
 
 pre {
     white-space: pre;
+}
+
+@media (min-width: 48em) {
+    .content {
+        max-width: 40rem;
+    }
 }
 
 /* Adjust width of code blocks when the mouse is over the block. */
