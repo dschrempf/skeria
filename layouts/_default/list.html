@@ -1,15 +1,44 @@
 {{ partial "head.html" . }}
 <div class="content container">
-  <h1 class="post-title">{{ .Section }}</h1>
-  <ul class="posts">
-  {{ range .Data.Pages }}
-    <li><a href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ if isset .Params "categories" }}
-    &middot;
-    {{ range .Params.categories }}<a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
-    {{ end }}</span>
-    &middot; <time>{{ .Date.Format "Jan 2, 2006" }}</time></li>
-  {{ end }}
-  </ul>
+    <h1 class="post-title">{{ .Section }}</h1>
+    <!-- <ul class="posts"> -->
+        <!-- {{ range .Data.Pages }} -->
+        <!-- <li> -->
+        <!-- <a href="{{ .Permalink }}">{{ .Title }}</a> -->
+            <!-- {{ if isset .Params "categories" }} -->
+            <!-- &middot; -->
+            <!-- {{ range .Params.categories }}<a class="label" href="{{ "/" | absURL }}{{ . | urlize }}">{{ . }}</a>{{ end }} -->
+            <!-- {{ end }} -->
+        <!-- &middot; -->
+        <!-- <time>{{ .Date.Format "Jan 2, 2006" }}</time> -->
+        <!-- </li> -->
+        <!-- {{ end }} -->
+    <!-- </ul> -->
+    <style>
+     table {
+         border: none;
+     }
+     td, th {
+         border: none;
+         padding: 5px 0;
+     }
+     tr:nth-child(even) {
+         background-color: white;
+     }
+     /* Don't ask me why I have to specify this so weirdly here. Same is done in
+     poole.css */
+     tbody tr:nth-child(odd) td {
+         background-color: white;
+     }
+    </style>
+    <!-- <table class="posts"> -->
+    <table>
+        {{ range .Data.Pages }}
+        <tr>
+            <td><time>{{ .Date.Format "Jan 2, 2006" }}</time> </td>
+            <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+        </tr>
+        {{ end }}
+    </table>
 </div>
 {{ partial "foot.html" . }}

@@ -8,13 +8,14 @@
         {{ if not .Site.Params.hideReadingTime }}
         &middot; {{ .ReadingTime }} minute read
         {{ end }}
-        {{ if .Site.DisqusShortname }}
-        &middot; <a href="{{ .Permalink }}#disqus_thread">Comments</a>
-        {{ end }}
+        <!-- {{ if .Site.DisqusShortname }} -->
+        <!-- &middot; <a href="{{ .Permalink }}#disqus_thread">Comments</a> -->
+        <!-- {{ end }} -->
         {{ if isset .Params "categories" }}
-        <br/>
+        <!-- <br/> -->
+        &middot;
         {{ range .Params.categories }}
-        <a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>
+        <a class="label" href="{{ "/" | absURL }}{{ . | urlize }}">{{ . }}</a>
         {{ end }}
         {{ end }}
     </span>
