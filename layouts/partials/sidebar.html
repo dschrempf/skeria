@@ -1,5 +1,7 @@
 <div class="sidebar">
     <div class="container sidebar-sticky">
+
+        <!-- Gravatar, title and tagline. -->
         <div class="sidebar-about">
             {{ if isset .Site.Params "gravatarhash" }}
             <img style="border-radius:50%"
@@ -10,6 +12,7 @@
             {{ with .Site.Params.tagline }}<p class="lead">{{ . | markdownify }}</p>{{ end }}
         </div>
 
+        <!-- Menus. -->
         <ul class="sidebar-nav">
             <li class="sidebar-nav-item"><a href="{{ "/" | absURL }}">{{ if isset .Site.Params "home"}}{{ .Site.Params.home }}{{ else }}Blog{{ end }}</a></li>
             {{ range .Site.Menus.main }}

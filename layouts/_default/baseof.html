@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="{{ "/css/poole-overrides.css" | absURL }}">
     <link rel="stylesheet" href="{{ "/css/hyde-overrides.css" | absURL }}">
     <link rel="stylesheet" href="{{ "/css/hyde-x.css" | absURL }}">
-    {{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ "/css/highlight/" | absURL }}{{ .Site.Params.highlight }}.css">{{ end }}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+	  <link href="{{ "/css/prism.css" | absURL }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ "/css/myblog.css" | absURL }}">
 </head>
 
@@ -30,18 +30,20 @@
     <!-- Scroll here with jQuery.scrollTo -->
     <div id="top"></div>
 
+    <!-- The blog post, summary, or other main content. -->
     {{ block "main" . }}
       {{ .Content }}
     {{ end }}
 
     <!-- Highlight. -->
     {{ if isset .Site.Params "highlight" }}
-    <script src="{{ "/js/highlight.pack.js" | absURL }}"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+	  <script src="{{ "/js/prism.js" | absURL }}"></script>
     {{ end }}
 
-    <!-- Scroll to content. -->
+    <!-- JQyery. Has to be loaded before ScrollTo and Search. -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Scroll to main content. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
@@ -51,6 +53,7 @@
      });
     </script>
 
+    <!-- Other footer files such as search. -->
     {{ block "footerfiles" . }}
     {{ end }}
 </body>

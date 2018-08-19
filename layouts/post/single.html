@@ -1,5 +1,4 @@
 {{ define "main" }}
-
 <div class="content container">
   <div class="post">
     <h1 class="post-title">{{ .Title }}</h1>
@@ -8,11 +7,7 @@
         {{ if not .Site.Params.hideReadingTime }}
         &middot; {{ .ReadingTime }} minute read
         {{ end }}
-        <!-- {{ if .Site.DisqusShortname }} -->
-        <!-- &middot; <a href="{{ .Permalink }}#disqus_thread">Comments</a> -->
-        <!-- {{ end }} -->
         {{ if isset .Params "categories" }}
-        <!-- <br/> -->
         &middot;
         {{ range .Params.categories }}
         <a class="label" href="{{ "/" | absURL }}{{ . | urlize }}">{{ . }}</a>
@@ -24,22 +19,6 @@
   {{ if .Site.DisqusShortname }}<div id="disqus_thread"></div>{{ end }}
 </div>
 
-{{ with .Site.DisqusShortname }}
-<script id="dsq-count-scr" src="//dschrempf.disqus.com/count.js" async></script>
-<script>
- var disqus_shortname = {{ . }};
- var disqus_config = function () {
-     this.page.url = {{ $.Permalink }};
-     this.page.identifier = {{ $.Title }};
- };
- (function() {
-     var d = document, s = d.createElement('script');
-     s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-     s.setAttribute('data-timestamp', +new Date());
-     (d.head || d.body).appendChild(s);
- })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{{ end }}
+{{ partial "disqus" . }}
 
 {{ end }}
