@@ -1,10 +1,6 @@
-<!-- This template is used for the About page and similar ones. -->
-{{ partial "head.html" . }}
+{{ define "main" }}
 <div class="content container">
-    <!-- <div class="post"> -->
     <h1 class="post-title">{{ .Title }}</h1>
-    <!-- <span class="post-date">Last modified: {{ .Lastmod.Format "Jan 2, 2006" }}.</span> -->
     {{ .Content }}
-    <!-- </div> -->
 </div>
-{{ partial "foot.html" . }}
+{{ end }}

@@ -1,12 +1,12 @@
-{{ partial "head.html" . }}
+{{ define "footerfiles" }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+<script src="{{ "js/search.js" | absURL }}"></script>
+{{ end }}
 
+{{ define "main" }}
 <div class="content container">
-    <!-- <div class="post"> -->
     <h1 class="post-title">{{ .Title }}</h1>
-    <!-- <span class="post-date">Last modified: {{ .Lastmod.Format "Jan 2, 2006" }}.</span> -->
-    <!-- {{ .Content }} -->
-    <!-- </div> -->
-
     <div>
         <form action="{{ "search" | absURL }}">
             <input type="text" id="search-query" name="s"/>
@@ -15,8 +15,8 @@
             <!-- <h3>Matching pages</h3> -->
         </div>
     </div>
-    <!-- this template is sucked in by search.js and appended to the search-results div above.
-         So editing here will adjust style -->
+    <!-- This template is sucked in by search.js and appended to the search-results div above.
+         So editing here will adjust style. -->
     <script id="search-result-template" type="text/x-js-template">
      <div id="summary-${key}">
      <h2><a href="${link}">${title}</a></h2>
@@ -30,5 +30,5 @@
 <script>
  document.getElementById('search-query').focus();
 </script>
+{{ end }}
 
-{{ partial "foot.html" . }}

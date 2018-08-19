@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <!-- Enable responsiveness on mobile devices.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <!-- Site specific parameters. -->
+    <title>{{ .Title }} &middot; {{ .Site.Author.name }}</title>
+    <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
+    <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ if gt $index 0 }},{{ end }}{{ . }}{{ else }}{{ .Site.Params.defaultKeywords }}{{ end }}">
+
+    <!-- CSS, fonts and icons. -->
+    <link rel="stylesheet" href="{{ "/css/poole.css" | absURL }}">
+    <link rel="stylesheet" href="{{ "/css/hyde.css" | absURL }}">
+    <link rel="stylesheet" href="{{ "/css/poole-overrides.css" | absURL }}">
+    <link rel="stylesheet" href="{{ "/css/hyde-overrides.css" | absURL }}">
+    <link rel="stylesheet" href="{{ "/css/hyde-x.css" | absURL }}">
+    {{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ "/css/highlight/" | absURL }}{{ .Site.Params.highlight }}.css">{{ end }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <link rel="stylesheet" href="{{ "/css/myblog.css" | absURL }}">
+</head>
+
+<body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }}>
+    {{ partial "sidebar.html" . }}
+
+    <!-- Scroll here with jQuery.scrollTo -->
+    <div id="top"></div>
+
+    {{ block "main" . }}
+      {{ .Content }}
+    {{ end }}
+
+    <!-- Highlight. -->
+    {{ if isset .Site.Params "highlight" }}
+    <script src="{{ "/js/highlight.pack.js" | absURL }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    {{ end }}
+
+    <!-- Scroll to content. -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
+    <script>
+     $(document).ready(function() {
+         $.scrollTo( $('#top'), 500);
+     });
+    </script>
+
+    {{ block "footerfiles" . }}
+    {{ end }}
+</body>
+</html>

@@ -1,19 +1,6 @@
-{{ partial "head.html" . }}
+{{ define "main" }}
 <div class="content container">
     <h1 class="post-title">{{ .Section }}</h1>
-    <!-- <ul class="posts"> -->
-        <!-- {{ range .Data.Pages }} -->
-        <!-- <li> -->
-        <!-- <a href="{{ .Permalink }}">{{ .Title }}</a> -->
-            <!-- {{ if isset .Params "categories" }} -->
-            <!-- &middot; -->
-            <!-- {{ range .Params.categories }}<a class="label" href="{{ "/" | absURL }}{{ . | urlize }}">{{ . }}</a>{{ end }} -->
-            <!-- {{ end }} -->
-        <!-- &middot; -->
-        <!-- <time>{{ .Date.Format "Jan 2, 2006" }}</time> -->
-        <!-- </li> -->
-        <!-- {{ end }} -->
-    <!-- </ul> -->
     <style>
      table {
          border: none;
@@ -28,6 +15,7 @@
      }
      /* Don't ask me why I have to specify this so weirdly here. Same is done in
      poole.css */
+     /* TODO clean up css files. */
      tbody tr:nth-child(odd) td {
          background-color: white;
      }
@@ -42,4 +30,4 @@
         {{ end }}
     </table>
 </div>
-{{ partial "foot.html" . }}
+{{ end }}
