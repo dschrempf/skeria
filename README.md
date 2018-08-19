@@ -3,7 +3,7 @@ Hyde-X
 
 Enhanced port of the Jekyll "[Hyde](https://github.com/poole/hyde)" theme to the [Hugo](http://gohugo.io) site generator. Check below for a list of enhancements.
 
-You can find a live site using this theme [here](http://andreimihu.com) and the corresponding source code [here](https://github.com/zyro/andreimihu.com).
+You can find a live site using this theme [here](https://dschrempf.github.io/) and the corresponding source code [here](https://github.com/dschrempf/blog).
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -21,7 +21,7 @@ You can find a live site using this theme [here](http://andreimihu.com) and the 
 $ cd your_site_repo/
 $ mkdir themes
 $ cd themes
-$ git clone https://github.com/zyro/hyde-x
+$ git clone https://github.com/dschrempf/hyde-x
 ```
 
 See the [official Hugo themes documentation](http://gohugo.io/themes/installing) for more info.
