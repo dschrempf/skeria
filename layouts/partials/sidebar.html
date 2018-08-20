@@ -3,7 +3,7 @@
 
         <!-- Gravatar, title and tagline. -->
         <div class="sidebar-about">
-            {{ if isset .Site.Params "gravatarhash" }}
+            {{ if .Site.Params.gravatarHash }}
             <img style="border-radius:50%"
                  src="https://www.gravatar.com/avatar/{{ .Site.Params.gravatarHash }}?s=200"
                  alt="gravatar" title="{{ .Site.Author.name }}">
@@ -43,7 +43,7 @@
             </li>
         </ul>
 
-        {{ if isset .Site.Params "flattr" }}
+        {{ if .Site.Params.flattr }}
         <p><script id='flattr'>
             (function(id){
                 var s = document.getElementById(id);
