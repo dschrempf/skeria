@@ -103,7 +103,6 @@ paginate = 30
     home = "Blog"
 
     # Metadata used to drive integrations.
-    googleAnalytics = ""
     gravatarHash = ""
 
     # Sidebar social links, these must be full URLs.
@@ -143,40 +142,43 @@ paginate = 30
 Hyde-X provides 8 built-in colour themes by default, with the option to define
 more in your own custom CSS.
 
-![Hyde-X theme classes](https://github.com/zyro/hyde-x/blob/master/images/theme-colours.png)
+![Hyde-X theme classes](images/theme-colours.png)
 
 ### Tips
 
-* If you've added `theme = "hyde-x"` to your `config.toml`, you don't need to keep using the `--theme=hyde-x` flag!
-* Pages where you specify `menu = "main"` in the front matter will be linked in the sidebar just below the `Blog` link.
-* Use the exact permalink format above to maintain old links if migrating from Jekyll/Octopress.
-* Although all of the syntax highlight CSS files under the theme's `static/css/highlight` are bundled with the site, only the one you choose will be included in the page and delivered to the browser.
-* Change the favicon by providing your own as `static/favicon.png` in your site directory.
-* Hugo makes it easy to override theme layout and behaviour, read about it [here](http://gohugo.io/themes/customizing).
-* Pagination is set to 10 items by default, change it by updating `paginate = 10` in your `config.toml`.
-* Set `truncate = false` in the `[params]` section of your `config.toml` to display full blog post contents in the index page, like the [base Hyde theme](https://github.com/poole/hyde) did.
+* Pages where you specify `menu = "main"` in the front matter will be linked in
+  the sidebar just below the `Blog` link.
+* Use the exact permalink format above to maintain old links if migrating from
+  Jekyll/Octopress.
+<!-- * Change the favicon by providing your own as `static/favicon.png` in your site directory. -->
+* Hugo makes it easy to override theme layout and behaviour, read about it
+  [here](http://gohugo.io/themes/customizing).
+* Pagination is set to 30 items by default, change it by updating `paginate =
+  30` in your `config.toml`.
 
-### Changes and enhancements from the original theme
+### Changes and enhancements from the Hyde and Hyde-X theme
 
 * Category labels and lists.
-* Client-side syntax highlighting through [highlight.js](https://highlightjs.org/), sane fallback if disabled or no JS - infinitely more flexible than the standard Hugo highlighting.
-* Disqus integration: comment counts listed under blog entry names in post list, comments displayed at the bottom of each post.
-* Gravatar image in sidebar.
-* Google Analytics integration.
+* Client-side syntax highlighting through [Prism.js](https://prismjs.com/).
+  Please use a custom configuration of Prism if you use special programming
+  languages.
+* No Google Analytics.
+* Privacy statement and policy (check out [Iubenda](https://www.iubenda.com/en/)).
+* Cookie consent message/warning (see [CookieConsent](https://cookieconsent.insites.com/))
 * Sidebar link layout and footer format changes.
-* Blog post list now contains only the post description, not the full contents.
-* Paginated blog listing.
 * [FontAwesome](http://fortawesome.github.io/Font-Awesome) social links.
+* [Academicons](https://github.com/jpswalsh/academicons).
 * ...many other small layout tweaks!
 
 ### Attribution
 
-Obviously largely a port of the awesome [Hyde](https://github.com/poole/hyde) theme.
+Largely a port of the awesome [Hyde](https://github.com/poole/hyde) and
+[Hyde-X](https://guthub.com/zyro/hyde-x) themes.
 
 ### Questions, ideas, bugs, pull requests?
 
-All feedback is welcome! Head over to the [issue tracker](https://github.com/zyro/hyde-x/issues).
+All feedback is welcome! Head over to the [issue tracker](https://github.com/dschrempf/hyde-x/issues).
 
 ### License
 
-Open sourced under the [MIT license](https://github.com/zyro/hyde-x/blob/master/LICENSE).
+Open sourced under the [MIT license](https://github.com/dschrempf/hyde-x/LICENCE).
