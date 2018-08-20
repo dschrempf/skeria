@@ -1,9 +1,14 @@
-Hyde-X
+Skeria
 ======
+TODO Syntax highlighting.
 
-Enhanced port of the Jekyll "[Hyde](https://github.com/poole/hyde)" theme to the [Hugo](http://gohugo.io) site generator. Check below for a list of enhancements.
+[Hugo](http://gohugo.io) site generator theme inspired by
 
-You can find a live site using this theme [here](https://dschrempf.github.io/) and the corresponding source code [here](https://github.com/dschrempf/blog).
+- Jekyll "[Hyde](https://github.com/poole/hyde)" theme;
+- Hugo "[Hyde-X](https://guthub.com/zyro/hyde-x)" theme.
+
+Please visit the [live site](https://dschrempf.github.io/) using Skeria and the
+corresponding [source code](https://github.com/dschrempf/blog).
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -21,10 +26,11 @@ You can find a live site using this theme [here](https://dschrempf.github.io/) a
 $ cd your_site_repo/
 $ mkdir themes
 $ cd themes
-$ git clone https://github.com/dschrempf/hyde-x
+$ git clone https://github.com/dschrempf/skeria
 ```
 
-See the [official Hugo themes documentation](http://gohugo.io/themes/installing) for more info.
+See the [official Hugo themes documentation](http://gohugo.io/themes/installing)
+for more info.
 
 ### Usage
 
@@ -35,77 +41,70 @@ This theme expects a relatively standard Hugo blog/personal site layout:
     ├── post
     |   ├── post1.md
     |   └── post2.md
-    ├── license.md        // this is used in the sidebar footer link
-    └── other_page.md
+    ├── license.md        // Used in the sidebar footer link.
+    └── other_page.md     // May be used as a menu entry (e.g., 'About').
 ```
 
-Just run `hugo --theme=hyde-x` to generate your site!
+Just run `hugo --theme=skeria` to generate your site or specify `theme = skeria`
+in your `config.toml`.
 
 ### Configuration
 
-An example of what your site's `config.toml` could look like. All theme-specific parameters are under `[params]` and standard Hugo parameters are used where possible.
+An example of what your site's `config.toml` could look like. All theme-specific
+parameters are under `[params]` and standard Hugo parameters are used where
+possible.
 
-``` toml
-baseurl = "http://example.com/"
-title = "Your site title"
+```toml
+baseurl = "https://elias.example.page"
+title = "Elias's blog"
+
 languageCode = "en-us"
-disqusShortname = "your_disqus_shortname" # Optional, enable Disqus integration
+disqusShortname = "elias"
 MetaDataFormat = "toml"
-theme = "hyde-x"
-paginate = 10
+
+theme = "skeria"
+paginate = 30
+
+[outputs]
+    home = ["HTML", "JSON"]
 
 [author]
-    name = "Your Name"
+    name = "Elias Schneider"
 
 [permalinks]
-    # Optional. Change the permalink format for the 'post' content type.
+    # Optional. Change the permanent link format for the 'post' content type.
     # The format shown here is the same one Jekyll/Octopress uses by default.
     post = "/blog/:year/:month/:day/:title/"
 
 [taxonomies]
-    # Optional. Use if you want tags and lists.
+    # Optional. Tags and categories.
     category = "categories"
 
-#
 # All parameters below here are optional and can be mixed and matched.
-#
 [params]
-    # If false display full article contents in blog index.
-    # Otherwise show description and 'read on' link to individual blog post page.
-    # Default (if omitted) is true.
-    truncate = true
-
     # Used when a given page doesn't set its own.
-    defaultDescription = "Your default page description"
-    defaultKeywords = "your,default,page,keywords"
+    defaultDescription = "Interesting content."
+    defaultKeywords = "Interesting keywords."
 
-    # Hide estimated reading time for posts.
-    # Default (if omitted) is false.
+    # Hide estimated reading time for posts (default=false).
     hideReadingTime = false
 
     # Changes sidebar background and link/accent colours.
-    # See below for more colour options.
-    # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
-    theme = "theme-base-08"
-
-    # Select a syntax highight.
-    # Check the static/css/highlight directory for options.
-    highlight = "sunburst"
+    theme = "theme-base-darkblue"
 
     # Optional additional custom CSS file URL, will override other styles.
-    customCSS = ""
+    # customCSS = ""
 
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
-    tagline = "Your favourite quote or soundbite."
+    tagline = "A collection of articles about Linux, Emacs, coding and music."
 
-    # Text for the top menu link, which goes the root URL for the site.
-    # Default (if omitted) is "Blog".
+    # Text for the top menu link, which goes the root URL for the site (default=Blog).
     home = "Blog"
 
     # Metadata used to drive integrations.
-    googleAnalytics = "Your Google Analytics tracking code"
-    gravatarHash = "MD5 hash of your Gravatar email address"
+    googleAnalytics = ""
+    gravatarHash = ""
 
     # Sidebar social links, these must be full URLs.
     github = ""
@@ -116,15 +115,33 @@ paginate = 10
     facebook = ""
     twitter = ""
     youtube = ""
+    orcid = ""
+    flattr = ""
+    
+    # Mailto link.
+    email = "mailto:elias@gmail.com"
 
-    # Other social-like sidebar links
-    rss = false  # switch to true to enable RSS icon link
-    flattr = ""  # populate with your flattr uid
+    # GPG key.
+    gpgkey = "/gpg_public_key.txt"
+
+    # RSS.
+    rss = false
+
+    # Privacy statement link.
+    privacyPolicy = "https://www.iubenda.com/privacy-policy/76967501"
+
+# Additional menu entries in sidebar.
+[[menu.main]]
+    url = "/posts/"
+    name = "Posts"
+    weight = 2
+
 ```
 
 ### Built-in colour themes
 
-Hyde-X provides 8 built-in colour themes by default, with the option to define more in your own custom CSS.
+Hyde-X provides 8 built-in colour themes by default, with the option to define
+more in your own custom CSS.
 
 ![Hyde-X theme classes](https://github.com/zyro/hyde-x/blob/master/images/theme-colours.png)
 
