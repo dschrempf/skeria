@@ -181,4 +181,4 @@ All feedback is welcome! Head over to the [issue tracker](https://github.com/dsc
 
 ### License
 
-Open sourced under the [MIT license](https://github.com/dschrempf/skeria/LICENSE).
+Open sourced under the [MIT license](LICENSE).
