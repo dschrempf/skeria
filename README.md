@@ -1,6 +1,5 @@
 Skeria
 ======
-TODO Syntax highlighting.
 
 [Hugo](http://gohugo.io) site generator theme inspired by
 
@@ -160,7 +159,8 @@ more in your own custom CSS.
 
 * Category labels and lists.
 * Client-side syntax highlighting through [Prism.js](https://prismjs.com/).
-  Please use a custom configuration of Prism if you use special programming
+  Please feel free to use a custom [configuration of Prism](static/js/prism.js)
+  and [css of Prism](static/css/prism.css) if you use special programming
   languages.
 * No Google Analytics.
 * Privacy statement and policy (check out [Iubenda](https://www.iubenda.com/en/)).
@@ -177,8 +177,8 @@ Largely a port of the awesome [Hyde](https://github.com/poole/hyde) and
 
 ### Questions, ideas, bugs, pull requests?
 
-All feedback is welcome! Head over to the [issue tracker](https://github.com/dschrempf/hyde-x/issues).
+All feedback is welcome! Head over to the [issue tracker](https://github.com/dschrempf/skeria/issues).
 
 ### License
 
-Open sourced under the [MIT license](https://github.com/dschrempf/hyde-x/LICENCE).
+Open sourced under the [MIT license](https://github.com/dschrempf/skeria/LICENCE).
