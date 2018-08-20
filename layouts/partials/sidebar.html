@@ -3,9 +3,9 @@
 
         <!-- Gravatar, title and tagline. -->
         <div class="sidebar-about">
-            {{ with .Site.Params.gravatarhash }}
+            {{ if isset .Site.Params "gravatarhash" }}
             <img style="border-radius:50%"
-                 src="https://www.gravatar.com/avatar/{{ . }}?s=200"
+                 src="https://www.gravatar.com/avatar/{{ .Site.Params.gravatarHash }}?s=200"
                  alt="gravatar" title="{{ .Site.Author.name }}">
             {{ end }}
             <h1>{{ .Site.Title }}</h1>
@@ -43,12 +43,12 @@
             </li>
         </ul>
 
-        {{ with .Site.Params.flattr }}
+        {{ if isset .Site.Params "flattr" }}
         <p><script id='flattr'>
             (function(id){
                 var s = document.getElementById(id);
                 var f = document.createElement('iframe');
-                f.src = '//api.flattr.com/button/view/?uid={{ . }}&button=compact&url={{ "/" | absURL }}&title={{ .Site.Title }}';
+                f.src = '//api.flattr.com/button/view/?uid={{ .Site.Params.flattr }}&button=compact&url={{ "/" | absURL }}&title={{ .Site.Title }}';
                 f.title = 'Flattr';
                 f.height = 20;
                 f.width = 110;
