@@ -4,82 +4,82 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-    <!-- Enable responsiveness on mobile devices.-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-    <!-- Site specific parameters. -->
-    <title>{{ .Title }} &middot; {{ .Site.Author.name }}</title>
-    <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
-    <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ if gt $index 0 }},{{ end }}{{ . }}{{ else }}{{ .Site.Params.defaultKeywords }}{{ end }}">
+        <!-- Enable responsiveness on mobile devices.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-    <!-- CSS of site. -->
-    <link rel="stylesheet" href="{{ "/css/skeria.css" | absURL }}">
+        <!-- Site specific parameters. -->
+        <title>{{ .Title }} &middot; {{ .Site.Author.name }}</title>
+        <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
+        <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ if gt $index 0 }},{{ end }}{{ . }}{{ else }}{{ .Site.Params.defaultKeywords }}{{ end }}">
 
-    <!-- CSS of code blocks. -->
-    <!-- <link href="{{ "/css/prism.css" | absURL }}" rel="stylesheet" /> -->
-	  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" rel="stylesheet" />
+        <!-- CSS of site. -->
+        <link rel="stylesheet" href="{{ "/css/skeria.css" | absURL }}">
 
-    <!-- Fonts. -->
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather&display=swap" rel="stylesheet">
+        <!-- CSS of code blocks. -->
+	      <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" rel="stylesheet" />
 
-    <!-- Icons. -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" />
+        <!-- Fonts. -->
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather&display=swap" rel="stylesheet">
 
-    <!-- Cookies consent message. -->
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-    <script>
-     window.addEventListener("load", function(){
-         window.cookieconsent.initialise({
-             "palette": {
-                 "popup": {
-                     "background": "#000"
-                 },
-                 "button": {
-                     "background": "#f1d600"
+        <!-- Icons. -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" />
+
+        <!-- Cookies consent message. -->
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+        <script>
+         window.addEventListener("load", function(){
+             window.cookieconsent.initialise({
+                 "palette": {
+                     "popup": {
+                         "background": "#000"
+                     },
+                     "button": {
+                         "background": "#f1d600"
+                     }
                  }
-             }
-         })});
-    </script>
-</head>
+             })});
+        </script>
+    </head>
 
-<body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }}>
-    {{ partial "sidebar.html" . }}
+    <body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }}>
+        {{ partial "sidebar.html" . }}
 
-    <!-- Scroll here with jQuery.scrollTo -->
-    <div id="top"></div>
+        <!-- Scroll here with jQuery.scrollTo -->
+        <div id="top"></div>
 
-    <!-- The blog post, summary, or other main content. -->
-    {{ block "main" . }}
-      {{ .Content }}
-    {{ end }}
+        <!-- The blog post, summary, or other main content. -->
+        {{ block "main" . }}
+        {{ .Content }}
+        {{ end }}
 
-    <!-- Highlight. -->
-    {{ if isset .Site.Params "highlight" }}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/autoloader/prism-autoloader.min.js"></script>
-	  <!-- <script src="{{ "/js/prism.js" | absURL }}"></script> -->
-    {{ end }}
+        <!-- Highlight. -->
+        {{ if isset .Site.Params "highlight" }}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        {{ end }}
 
-    <!-- JQyery. Has to be loaded before ScrollTo and Search. -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- JQyery. Has to be loaded before ScrollTo and Search. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- Scroll to main content. -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js"></script>
-    {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
-    <script>
-     $(document).ready(function() {
-         $.scrollTo( $('#top'), 500);
-     });
-    </script>
+        <!-- Scroll to main content. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js"></script>
+        {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
+        <script>
+         $(document).ready(function() {
+             $.scrollTo( $('#top'), 500);
+         });
+        </script>
 
-    <!-- Other footer files such as search. -->
-    {{ block "footerfiles" . }}
-    {{ end }}
-</body>
+        <!-- Other footer files such as search. -->
+        {{ block "footerfiles" . }}
+        {{ end }}
+    </body>
+
 </html>
