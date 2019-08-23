@@ -1,3 +1,7 @@
+<!-- Only use https://cdnjs.com/. Check for updates regularly. -->
+<!-- Only Prism needs special handling because the paths are not provided by cdnjs.com. -->
+<!-- Also, the grammars to be autoloaded need to be downloaded from https://prismjs.com/plugins/autoloader/ -->
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
 <head>
@@ -15,14 +19,17 @@
     <link rel="stylesheet" href="{{ "/css/skeria.css" | absURL }}">
 
     <!-- CSS of code blocks. -->
-    <link href="{{ "/css/prism.css" | absURL }}" rel="stylesheet" />
+    <!-- <link href="{{ "/css/prism.css" | absURL }}" rel="stylesheet" /> -->
+	  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" rel="stylesheet" />
 
-    <!-- Fonts and icons. -->
+    <!-- Fonts. -->
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/c5cab2c422.js"></script>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 
-    <!-- Cookies consent message/warning. -->
+    <!-- Icons. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" />
+
+    <!-- Cookies consent message. -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
     <script>
@@ -53,15 +60,17 @@
 
     <!-- Highlight. -->
     {{ if isset .Site.Params "highlight" }}
-	  <script src="{{ "/js/prism.js" | absURL }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/autoloader/prism-autoloader.min.js"></script>
+	  <!-- <script src="{{ "/js/prism.js" | absURL }}"></script> -->
     {{ end }}
 
     <!-- JQyery. Has to be loaded before ScrollTo and Search. -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- Scroll to main content. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js"></script>
     {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
     <script>
      $(document).ready(function() {
