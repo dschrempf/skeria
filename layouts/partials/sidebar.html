@@ -3,7 +3,7 @@
 
         <!-- Gravatar, title and tagline. -->
         <div class="sidebar-about">
-            {{ if .Site.Params.gravatarHash }}
+            {{ if (and (.Site.Params.gravatarHash) (eq .File.BaseFileName "About")) }}
             <img style="border-radius:50%"
                  src="https://www.gravatar.com/avatar/{{ .Site.Params.gravatarHash }}?s=200"
                  alt="gravatar" title="{{ .Site.Author.name }}">
