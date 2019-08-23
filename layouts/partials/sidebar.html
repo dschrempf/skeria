@@ -8,7 +8,10 @@
                  src="https://www.gravatar.com/avatar/{{ .Site.Params.gravatarHash }}?s=200"
                  alt="gravatar" title="{{ .Site.Author.name }}">
             {{ end }}
-            <h1>{{ .Site.Title }}</h1>
+            <a href="{{ "/" | absURL }}"
+               style="text-decoration: none">
+                <h1>{{ .Site.Title }}</h1>
+            </a>
             {{ with .Site.Params.tagline }}<p class="lead">{{ . | markdownify }}</p>{{ end }}
         </div>
 
@@ -28,18 +31,18 @@
 
         <ul class="sidebar-nav">
             <li class="sidebar-nav-item">
-                {{ with .Site.Params.github }}<a href="{{ . }}" target="_blank"><i class="fa fa-github fa-1x"></i></a>{{ end }}
-                {{ with .Site.Params.bitbucket }}<a href="{{ . }}" target="_blank"><i class="fa fa-bitbucket fa-1x"></i></a>{{ end }}
-                {{ with .Site.Params.stackOverflow }}<a href="{{ . }}" target="_blank"><i class="fa fa-stack-overflow fa-1x"></i></a>{{ end }}
-                {{ with .Site.Params.linkedin }}<a href="{{ . }}" target="_blank"><i class="fa fa-linkedin fa-1x"></i></a>{{ end }}
-                {{ with .Site.Params.googleplus }}<a href="{{ . }}" target="_blank"><i class="fa fa-google-plus fa-1x"></i></a>{{ end }}
-                {{ with .Site.Params.facebook }}<a href="{{ . }}" target="_blank"><i class="fa fa-facebook fa-1x"></i></a>{{ end }}
-                {{ with .Site.Params.twitter }}<a href="{{ . }}" target="_blank"><i class="fa fa-twitter fa-1x"></i></a>{{ end }}
-                {{ with .Site.Params.youtube }}<a href="{{ . }}" target="_blank"><i class="fa fa-youtube fa-1x"></i></a>{{ end }}
+                {{ with .Site.Params.github }}<a href="{{ . }}" target="_blank"><i class="fab fa-github fa-1x"></i></a>{{ end }}
+                {{ with .Site.Params.bitbucket }}<a href="{{ . }}" target="_blank"><i class="fab fa-bitbucket fa-1x"></i></a>{{ end }}
+                {{ with .Site.Params.stackOverflow }}<a href="{{ . }}" target="_blank"><i class="fab fa-stack-overflow fa-1x"></i></a>{{ end }}
+                {{ with .Site.Params.linkedin }}<a href="{{ . }}" target="_blank"><i class="fab fa-linkedin fa-1x"></i></a>{{ end }}
+                {{ with .Site.Params.googleplus }}<a href="{{ . }}" target="_blank"><i class="fab fa-google-plus fa-1x"></i></a>{{ end }}
+                {{ with .Site.Params.facebook }}<a href="{{ . }}" target="_blank"><i class="fab fa-facebook fa-1x"></i></a>{{ end }}
+                {{ with .Site.Params.twitter }}<a href="{{ . }}" target="_blank"><i class="fab fa-twitter fa-1x"></i></a>{{ end }}
+                {{ with .Site.Params.youtube }}<a href="{{ . }}" target="_blank"><i class="fab fa-youtube fa-1x"></i></a>{{ end }}
                 {{ with .Site.Params.orcid }}<a href="{{ . }}" target="_blank"><i class="ai ai-orcid ai-1x"></i></a>{{ end }}
-                {{ with .Site.Params.email }}<a href="{{ . }}"><i class="fa fa-envelope fa-1x"></i></a>{{ end }}
-                {{ with .Site.Params.gpgkey }}<a href="{{ . }}"><i class="fa fa-key fa-1x"></i></a>{{ end }}
-                {{ if .Site.Params.rss }}<a href="{{ "/index.xml" | absURL }}" type="application/rss+xml"><i class="fa fa-rss fa-3x"></i></a>{{ end }}
+                {{ with .Site.Params.email }}<a href="{{ . }}"><i class="fas fa-envelope fa-1x"></i></a>{{ end }}
+                {{ with .Site.Params.gpgkey }}<a href="{{ . }}"><i class="fas fa-key fa-1x"></i></a>{{ end }}
+                {{ if .Site.Params.rss }}<a href="{{ "/index.xml" | absURL }}" type="application/rss+xml"><i class="fas fa-rss fa-3x"></i></a>{{ end }}
             </li>
         </ul>
 
