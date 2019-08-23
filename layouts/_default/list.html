@@ -7,20 +7,14 @@
      }
      td, th {
          border: none;
-         padding: 5px 10px;
+         padding: 5px 0px 5px 0px;
          vertical-align: top;
      }
-     tr:nth-child(even) {
-         background-color: white;
-     }
-     /* Don't ask me why I have to specify this so weirdly here. Same is done in
-     poole.css */
-     /* TODO clean up css files. */
-     tbody tr:nth-child(odd) td {
+     tbody tr:nth-child(odd) td,
+     tbody tr:nth-child(odd) th {
          background-color: white;
      }
     </style>
-    <!-- <table class="posts"> -->
     <table>
         {{ range .Data.Pages }}
         <tr>
