@@ -48,10 +48,11 @@
     </head>
 
     <body{{ with .Site.Params.theme }} class="{{ . }}"{{ end }}>
+        {{ partial "topbar.html" . }}
         {{ partial "sidebar.html" . }}
 
         <!-- Scroll here with jQuery.scrollTo -->
-        <div id="top"></div>
+        <!-- <div id="top"></div> -->
 
         <!-- The blog post, summary, or other main content. -->
         {{ block "main" . }}
@@ -68,21 +69,23 @@
         {{ end }}
 
         <!-- JQyery. Has to be loaded before ScrollTo and Search. -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
         <!-- Scroll to main content. -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script> -->
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
         {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
         <!-- ScrollTo does not work well on Android. It does not scroll to the
         very bottom, but stops at seemingly random points when the page is not
         long. For example, for short blog posts. -->
-        <script>
-         $(document).ready(function() {
+        <!-- <script>
+             $(document).ready(function() {
              $.scrollTo( $('#top'), 500);
-         });
-        </script>
+             });
+             </script>
+        -->
+        {{ partial "bottombar.html" . }}
 
         <!-- Other footer files such as search. -->
         {{ block "footerfiles" . }}

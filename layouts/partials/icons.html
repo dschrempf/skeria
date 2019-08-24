@@ -1,0 +1,31 @@
+<div class="icons">
+    <span class="icons-item"> {{ with .Site.Params.github }}<a href="{{ . }}" target="_blank"><i class="fab fa-github fa-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ with .Site.Params.bitbucket }}<a href="{{ . }}" target="_blank"><i class="fab fa-bitbucket fa-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ with .Site.Params.stackOverflow }}<a href="{{ . }}" target="_blank"><i class="fab fa-stack-overflow fa-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ with .Site.Params.linkedin }}<a href="{{ . }}" target="_blank"><i class="fab fa-linkedin fa-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ with .Site.Params.googleplus }}<a href="{{ . }}" target="_blank"><i class="fab fa-google-plus fa-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ with .Site.Params.facebook }}<a href="{{ . }}" target="_blank"><i class="fab fa-facebook fa-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ with .Site.Params.twitter }}<a href="{{ . }}" target="_blank"><i class="fab fa-twitter fa-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ with .Site.Params.youtube }}<a href="{{ . }}" target="_blank"><i class="fab fa-youtube fa-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ with .Site.Params.orcid }}<a href="{{ . }}" target="_blank"><i class="ai ai-orcid ai-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ with .Site.Params.email }}<a href="{{ . }}"><i class="fas fa-envelope fa-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ with .Site.Params.gpgkey }}<a href="{{ . }}"><i class="fas fa-key fa-1x"></i></a>{{ end }}</span>
+    <span class="icons-item"> {{ if .Site.Params.rss }}<a href="{{ "/index.xml" | absURL }}" type="application/rss+xml"><i class="fas fa-rss fa-3x"></i></a>{{ end }}</span>
+</div>
+
+{{ if .Site.Params.flattr }}
+<div class="icons-item">
+    <p><script id='flattr'>
+        (function(id){
+            var s = document.getElementById(id);
+            var f = document.createElement('iframe');
+            f.src = '//api.flattr.com/button/view/?uid={{ .Site.Params.flattr }}&button=compact&url={{ "/" | absURL }}&title={{ .Site.Title }}';
+            f.title = 'Flattr';
+            f.height = 20;
+            f.width = 110;
+            f.style.borderWidth = 0;
+            s.parentNode.insertBefore(f, s);
+        })('flattr');
+    </script></p>
+</div>
+{{ end }}

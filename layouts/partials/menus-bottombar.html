@@ -1,0 +1,17 @@
+<!-- TODO: Improve. -->
+<span class="bottombar-nav">
+    <p>
+    <span class="bottombar-nav-item"><a href="{{ "/" | absURL }}">{{ if isset .Site.Params "home"}}{{ .Site.Params.home }}{{ else }}Blog{{ end }}</a></span>
+    {{ range .Site.Menus.main }}
+    <span class="bottombar-nav-item">{{ .Pre }}<a href="{{ .URL | absURL }}">{{ .Name }}</a></span>
+    {{end}}
+    </p>
+    <p>
+    {{ range .Site.Menus.about }}
+    <span class="bottombar-nav-item">{{ .Pre }}<a href="{{ .URL | absURL }}">{{ .Name }}</a></span>
+    {{end}}
+    {{ range .Site.Menus.search }}
+    <span class="bottombar-nav-item">{{ .Pre }}<a href="{{ .URL | absURL }}">{{ .Name }}</a></span>
+    {{end}}
+    </p>
+</span>
