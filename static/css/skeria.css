@@ -293,6 +293,7 @@ select {
         min-height: 42em;
     }
     .sidebar-sticky {
+        margin: 4em 0em 0em 0em;
         padding: 0em 2em 0em 2em;
     }
 }
@@ -327,6 +328,8 @@ select {
 
 .sidebar-about h1 {
     color: #fff;
+    margin-top: 0.5em;
+    margin-top: 0.5em;
 }
 
 .sidebar-nav {
