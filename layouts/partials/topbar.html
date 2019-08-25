@@ -3,6 +3,7 @@
         <div class="topbar-about">
             {{ partial "gravatar.html" . }}
             {{ partial "title.html" . }}
+            {{ with .Site.Params.tagline }}<span class="lead">{{ . | markdownify }}</span>{{ end }}
         </div>
     </div>
 </div>
