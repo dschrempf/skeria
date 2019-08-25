@@ -8,6 +8,8 @@ html {
 }
 
 html {
+    /* Relative position needed to set sidebar height to page height on small
+   displays. */
     position: relative;
     font-size: 16px;
     font-family: 'Merriweather', serif;
@@ -15,7 +17,8 @@ html {
 }
 
 body {
-    height: 100%;
+    /* Remove if not needed. */
+    /* height: 100%; */
     color: #515151;
     background-color: #fff;
 }
@@ -292,6 +295,9 @@ select {
 /******************************************************************************/
 /* Sidebar. */
 
+/* We have to use two different ways of positioning the sidebar, since for
+   displays with low height, fixed positioning is not possible. */
+
 @media (max-height:40em) {
     .sidebar {
         color: rgba(255,255,255,.5);
@@ -383,11 +389,11 @@ select {
 
 .content {
     margin: 4em 2em 2em 2em;
+    max-width: 48em;
 }
 
 @media (min-width:48em) {
     .content {
-        max-width: 48em;
         margin-left: 22em;
     }
 }
