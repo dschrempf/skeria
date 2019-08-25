@@ -8,8 +8,7 @@ html {
 }
 
 html {
-    /* Relative position needed to set sidebar height to page height on small
-   displays. */
+    /* Relative position to set sidebar height to page height on small displays. */
     position: relative;
     font-size: 16px;
     font-family: 'Merriweather', serif;
@@ -17,8 +16,6 @@ html {
 }
 
 body {
-    /* Remove if not needed. */
-    /* height: 100%; */
     color: #515151;
     background-color: #fff;
 }
@@ -31,24 +28,19 @@ a {
     text-decoration: none;
 }
 
-a strong {
-    color: inherit;
-}
+/* TODO: Remove if not needed. */
+/* a strong { */
+/*     color: inherit; */
+/* } */
 
-a:focus,
-a:hover {
+a:focus, a:hover {
     text-decoration: underline;
 }
 
 /******************************************************************************/
 /* Headlines. */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     margin-top: 2em;
     margin-bottom: 0.5em;
     font-weight: 400;
@@ -74,6 +66,9 @@ h6 {
     font-size: 1em
 }
 
+/******************************************************************************/
+/* Lead (text under title). */
+
 .lead {
 }
 
@@ -85,9 +80,7 @@ p {
     margin-bottom: 1em;
 }
 
-dl,
-ol,
-ul {
+dl, ol, ul {
     margin-top: 0;
     margin-bottom: 1em
 }
@@ -97,7 +90,7 @@ dt {
 }
 
 dd {
-    margin-bottom: .5em
+    margin-bottom: 0.5em
 }
 
 /******************************************************************************/
@@ -107,26 +100,31 @@ code, pre, .timestamp {
     font-family: 'Inconsolata', monospace;
 }
 
+/* TODO. Simple code tags are not working correctly yet (space on right, confer
+   with timestamps and labels). */
 /* See also label class. */
-.timestamp {
+code, .timestamp {
+    font-family: 'Inconsolata', monospace;
     color: #369;
     background-color: #eee;
     display: inline;
-    border-radius: .25em;
+    border-radius: 0.25em;
     /* Compensate white space on the right (T R B L). */
-    padding: .2em 0em .2em .4em;
+    padding: 0.2em 0em 0.2em 0.4em;
     /* Compensate white space on the right. */
-    margin: 0 .25em 0 0;
+    margin: 0 0.25em 0 0;
     line-height: 1;
-    text-align: center;
-    white-space: nowrap;
+    /* TODO: Remove if time stamps look fine for a while :). */
+    /* text-align: center; */
+    /* white-space: nowrap; */
 }
 
-pre .timestamp {
-    padding: 0;
-    color: inherit;
-    background-color: transparent
-}
+/* TODO: Is this needed? */
+/* pre .timestamp { */
+/*     padding: 0; */
+/*     color: inherit; */
+/*     background-color: transparent */
+/* } */
 
 /******************************************************************************/
 /* Images. */
@@ -134,7 +132,7 @@ pre .timestamp {
 img {
     display: block;
     max-width: 100%;
-    margin: 0 0 1em;
+    margin: 1em 0 1em 0;
 }
 
 /******************************************************************************/
@@ -148,7 +146,7 @@ table {
 }
 td,
 th {
-    padding: .25em .5em;
+    padding: 0.25em 0.5em;
     border: 1px solid #e5e5e5
 }
 tbody tr:nth-child(odd) td,
@@ -160,10 +158,10 @@ tbody tr:nth-child(odd) th {
 /* Quotes */
 
 blockquote {
-    padding: .5em 1em;
-    margin: .8em 0;
+    padding: 0.5em 1em;
+    margin: 0.8em 0;
     color: #7a7a7a;
-    border-left: .25em solid #e5e5e5;
+    border-left: 0.25em solid #e5e5e5;
 }
 blockquote p:last-child {
     margin-bottom: 0;
@@ -194,11 +192,11 @@ a.label:hover {
 .label {
     background-color: #eee;
     display: inline;
-    border-radius: .25em;
+    border-radius: 0.25em;
     /* Compensate white space on the right (T R B L). */
-    padding: .2em .4em .2em .4em;
+    padding: 0.2em 0.4em 0.2em 0.4em;
     /* Compensate white space on the right. */
-    margin: 0 .25em 0 0;
+    margin: 0 0.25em 0 0;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
@@ -222,10 +220,6 @@ select {
 /* Containers. */
 
 .container {
-    padding-left: 1em;
-    padding-right: 1em;
-    margin-left: auto;
-    margin-right: auto
 }
 
 /******************************************************************************/
@@ -373,7 +367,7 @@ select {
 /* Footer. */
 
 .footer {
-    font-size: .8em
+    font-size: 0.8em
 }
 
 /******************************************************************************/
@@ -391,13 +385,13 @@ select {
 /* Content. */
 
 .content {
-    margin: 4em 2em 2em 2em;
+    margin: 4em 3em 2em 3em;
     max-width: 48em;
 }
 
 @media (min-width:48em) {
     .content {
-        margin-left: 22em;
+        margin-left: 23em;
     }
 }
 
