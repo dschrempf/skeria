@@ -1,4 +1,4 @@
-<ul class="sidebar-nav">
+<div class="sidebar-nav">
     <li class="sidebar-nav-item"><a href="{{ "/" | absURL }}">{{ if isset .Site.Params "home"}}{{ .Site.Params.home }}{{ else }}Blog{{ end }}</a></li>
     {{ range .Site.Menus.main }}
     <li class="sidebar-nav-item">&bull;&nbsp;{{ .Pre }}<a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
@@ -9,4 +9,4 @@
     {{ range .Site.Menus.search }}
     <li class="sidebar-nav-item">{{ .Pre }}<a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
     {{end}}
-</ul><br/>
+</div>
