@@ -158,10 +158,6 @@ more in your own custom CSS.
 ### Changes and enhancements from the Hyde and Hyde-X theme
 
 * Category labels and lists.
-* Client-side syntax highlighting through [Prism.js](https://prismjs.com/).
-  Please feel free to use a custom [configuration of Prism](static/js/prism.js)
-  and [css of Prism](static/css/prism.css) if you use special programming
-  languages.
 * No Google Analytics.
 * Privacy statement and policy (check out [Iubenda](https://www.iubenda.com/en/)).
 * Cookie consent message/warning (see [CookieConsent](https://cookieconsent.insites.com/))

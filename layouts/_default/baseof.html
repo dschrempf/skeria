@@ -1,6 +1,4 @@
 <!-- Only use https://cdnjs.com/. Check for updates regularly. -->
-<!-- Only Prism needs special handling because the paths are not provided by cdnjs.com. -->
-<!-- Also, the grammars to be autoloaded need to be downloaded from https://prismjs.com/plugins/autoloader/ -->
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
@@ -18,9 +16,6 @@
 
         <!-- CSS of site. -->
         <link rel="stylesheet" href="{{ "/css/skeria.css" | absURL }}">
-
-        <!-- CSS of code blocks. -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" rel="stylesheet" />
 
         <!-- Fonts. -->
         <link href="https://fonts.googleapis.com/css?family=Inconsolata|Merriweather&display=swap" rel="stylesheet">
@@ -57,16 +52,6 @@
         <!-- The blog post, summary, or other main content. -->
         {{ block "main" . }}
         {{ .Content }}
-        {{ end }}
-
-        <!-- Highlight. -->
-        <!-- Download all grammars from "https://prismjs.com/plugins/autoloader/" and put them into the "/components/" folder! -->
-        {{ if isset .Site.Params "highlight" }}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-core.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/autoloader/prism-autoloader.min.js"></script>
-        <script>
-         Prism.plugins.autoloader.languages_path = '/components/';
-        </script>
         {{ end }}
 
         <!-- JQyery. Has to be loaded before ScrollTo and Search. -->
