@@ -12,7 +12,6 @@ corresponding [source code](https://github.com/dschrempf/blog).
 * [Installation](#installation)
 * [Usage](#usage)
 * [Configuration](#configuration)
-* [Built-in colour themes](#built-in-colour-themes)
 * [Tips](#tips)
 * [Changes and enhancements from the original theme](#changes-and-enhancements-from-the-original-theme)
 * [Attribution](#attribution)
@@ -135,13 +134,6 @@ paginate = 30
     weight = 2
 
 ```
-
-### Built-in colour themes
-
-Hyde-X provides 8 built-in colour themes by default, with the option to define
-more in your own custom CSS.
-
-![Hyde-X theme classes](images/theme-colours.png)
 
 ### Tips
 
