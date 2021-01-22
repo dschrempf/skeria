@@ -27,7 +27,6 @@ a {
 }
 
 a:focus, a:hover {
-  /* color: #69C; */
   text-decoration: underline;
 }
 
@@ -68,7 +67,7 @@ h6 {
 /* Paragraphs and lists. */
 
 p {
-  margin-top: 0;
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 
@@ -223,19 +222,22 @@ input[type=text]:focus {
   color: #fff
 }
 
+.topbar p {
+  margin: 0;
+}
+
 .topbar-sticky {
   padding: 0.5em 2em 0.5em 2em;
 }
 
-.topbar-about img {
-  margin: 0.5em auto 0.5em auto;
-  width: 100px;
-  height: 100px
+.topbar-sticky h1 {
+  color: #fff;
+  margin: 0.5em 0 0.5em 0;
+  padding: 0 0 0 0;
 }
 
-.topbar-about h1 {
-  color: #fff;
-  margin: 0.2em 0 0 0;
+.topbar-nav-item {
+  margin: 0.5em;
 }
 
 
@@ -252,15 +254,12 @@ input[type=text]:focus {
   color: #fff
 }
 
+.bottombar p {
+  margin: 0;
+}
+
 .bottombar-sticky {
   padding: 0.5em 2em 0.5em 2em;
-}
-
-.bottombar-nav {
-}
-
-.bottombar-nav-item {
-  margin: 0.5em;
 }
 
 /******************************************************************************/
@@ -275,9 +274,6 @@ input[type=text]:focus {
 
 .icons {
   font-size: 1.5em;
-  line-height: 1;
-  margin-top: 0.8em;
-  margin-bottom: 0.8em;
 }
 
 .icons-item {
@@ -287,28 +283,34 @@ input[type=text]:focus {
 /* Content. */
 
 .content {
-  margin: 4em 3em 2em 3em;
-}
-
-@media (min-width:48em) {
-  .content {
-    margin-left: 23em;
-    max-width: 48em;
-  }
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50em
 }
 
 /******************************************************************************/
 /* Posts. */
 
 .post {
-  margin-top: 4em;
+  margin-top: 1em;
   margin-bottom: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.post-list {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
 .post-title,
 .post-title a {
   color: #444c57;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 0em;
 }
 

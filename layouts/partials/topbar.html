@@ -1,9 +1,7 @@
 <div class="topbar">
     <div class="topbar-sticky">
-        <div class="topbar-about">
-            {{ partial "title.html" . }}
-            {{ with .Site.Params.tagline }}<span class="lead">{{ . | markdownify }}</span>{{ end }}
-            {{ partial "menus-topbar.html" . }}
-        </div>
+        {{ partial "title.html" . }}
+        {{ with .Site.Params.tagline }}<span class="lead">{{ . | markdownify }}</span>{{ end }}
+        {{ partial "menus-topbar.html" . }}
     </div>
 </div>

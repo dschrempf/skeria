@@ -1,28 +1,30 @@
 {{ define "main" }}
 <div class="content container">
-    <h1 class="post-title">{{ humanize .Section }}</h1>
-    <br>
-    <style>
-     table {
-         border: none;
-     }
-     td, th {
-         border: none;
-         padding: 5px 0px 5px 0px;
-         vertical-align: top;
-     }
-     tbody tr:nth-child(odd) td,
-     tbody tr:nth-child(odd) th {
-         background-color: white;
-     }
-    </style>
-    <table>
-        {{ range .Data.Pages }}
-        <tr>
-            <td><time>{{ .Date.Format "Jan 2, 2006" }}</time> </td>
-            <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
-        </tr>
-        {{ end }}
-    </table>
+    <div class="post-list">
+      <h1 class="post-title">{{ humanize .Section }}</h1>
+      <br>
+      <style>
+       table {
+           border: none;
+       }
+       td, th {
+           border: none;
+           padding: 5px 0px 5px 0px;
+           vertical-align: top;
+       }
+       tbody tr:nth-child(odd) td,
+       tbody tr:nth-child(odd) th {
+           background-color: white;
+       }
+      </style>
+      <table>
+          {{ range .Data.Pages }}
+          <tr>
+              <td><time>{{ .Date.Format "Jan 2, 2006" }}</time> </td>
+              <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+          </tr>
+          {{ end }}
+      </table>
+    </div>
 </div>
 {{ end }}
