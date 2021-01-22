@@ -9,15 +9,6 @@ Skeria
 Please visit the [live site](https://dschrempf.github.io/) using Skeria and the
 corresponding [source code](https://github.com/dschrempf/blog).
 
-* [Installation](#installation)
-* [Usage](#usage)
-* [Configuration](#configuration)
-* [Tips](#tips)
-* [Changes and enhancements from the original theme](#changes-and-enhancements-from-the-original-theme)
-* [Attribution](#attribution)
-* [Questions, ideas, bugs, pull requests?](#questions-ideas-bugs-pull-requests)
-* [License](#license)
-
 ### Installation
 
 ```
@@ -70,13 +61,24 @@ paginate = 30
     name = "Elias Schneider"
 
 [permalinks]
-    # Optional. Change the permanent link format for the 'post' content type.
-    # The format shown here is the same one Jekyll/Octopress uses by default.
     post = "/blog/:year/:month/:day/:title/"
 
 [taxonomies]
-    # Optional. Tags and categories.
     category = "categories"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = true
+    style = "tango"
+    tabWidth = 2
+  [markup.goldmark.renderer]
+    unsafe= true
 
 # All parameters below here are optional and can be mixed and matched.
 [params]
@@ -84,17 +86,8 @@ paginate = 30
     defaultDescription = "Interesting content."
     defaultKeywords = "Interesting keywords."
 
-    # Changes navbar background and link/accent colours.
-    theme = "theme-base-darkblue"
-
-    # Optional additional custom CSS file URL, will override other styles.
-    # customCSS = ""
-
     # Displays under the title, keep it short. You can use markdown here.
     tagline = "A collection of articles about Linux, Emacs, coding and music."
-
-    # Text for the top menu link, which goes the root URL for the site (default=Blog).
-    home = "Blog"
 
     # Navbar social links, these must be full URLs.
     github = ""
@@ -132,29 +125,10 @@ paginate = 30
 
 * Pages where you specify `menu = "main"` in the front matter will be linked in
   the navbar just below the `Blog` link.
-* Use the exact permalink format above to maintain old links if migrating from
-  Jekyll/Octopress.
-<!-- * Change the favicon by providing your own as `static/favicon.png` in your site directory. -->
 * Hugo makes it easy to override theme layout and behaviour, read about it
   [here](http://gohugo.io/themes/customizing).
 * Pagination is set to 30 items by default, change it by updating `paginate =
   30` in your `config.toml`.
-
-### Changes and enhancements from the Hyde and Hyde-X theme
-
-* Category labels and lists.
-* No Google Analytics.
-* Privacy statement and policy (check out [Iubenda](https://www.iubenda.com/en/)).
-* Cookie consent message/warning (see [CookieConsent](https://cookieconsent.insites.com/))
-* Navbar link layout and footer format changes.
-* [FontAwesome](http://fortawesome.github.io/Font-Awesome) social links.
-* [Academicons](https://github.com/jpswalsh/academicons).
-* ...many other small layout tweaks!
-
-### Attribution
-
-Largely a port of the awesome [Hyde](https://github.com/poole/hyde) and
-[Hyde-X](https://guthub.com/zyro/hyde-x) themes.
 
 ### Questions, ideas, bugs, pull requests?
 
