@@ -9,9 +9,7 @@
             </h1>
             <span class="post-date">
                 {{ .Date.Format "Jan 2, 2006" }}
-                {{ if not .Site.Params.hideReadingTime }}
                 &middot; {{ .ReadingTime }} minute read
-                {{ end }}
                 {{ if isset .Params "categories" }}
                 &middot;
                 {{ range .Params.categories }}
@@ -23,7 +21,6 @@
             <a href="{{ .Permalink }}">&nbsp;Read on &rarr;</a>
         </div>
         {{ end }}
-        {{ template "_internal/pagination.html" . }}
     </div>
 </div>
 

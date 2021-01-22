@@ -84,9 +84,6 @@ paginate = 30
     defaultDescription = "Interesting content."
     defaultKeywords = "Interesting keywords."
 
-    # Hide estimated reading time for posts (default=false).
-    hideReadingTime = false
-
     # Changes navbar background and link/accent colours.
     theme = "theme-base-darkblue"
 
