@@ -55,6 +55,9 @@
         {{ .Content }}
         {{ end }}
 
+        <!-- Disqus script. Disqus is inserted by the 'single.html' partial. -->
+        {{ partial "disqus" . }}
+
         <!-- JQyery. Has to be loaded before ScrollTo and Search. -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.3/fuse.min.js"></script>
