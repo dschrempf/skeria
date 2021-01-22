@@ -1,8 +1,5 @@
 <span class="topbar-nav">
     <p>
-        <span class="topbar-nav-item">
-            <a href="{{ "/" | absURL }}">{{ if isset .Site.Params "home"}}{{ .Site.Params.home }}{{ else }}Blog{{ end }}</a>
-        </span>
         {{ range .Site.Menus.main }}
         <span class="topbar-nav-item">
             {{ .Pre }}<a href="{{ .URL | absURL }}">{{ .Name }}</a>
