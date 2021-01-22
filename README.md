@@ -39,7 +39,7 @@ This theme expects a relatively standard Hugo blog/personal site layout:
     ├── post
     |   ├── post1.md
     |   └── post2.md
-    ├── license.md        // Used in the sidebar footer link.
+    ├── license.md        // Used in the navbar footer link.
     └── other_page.md     // May be used as a menu entry (e.g., 'About').
 ```
 
@@ -87,23 +87,19 @@ paginate = 30
     # Hide estimated reading time for posts (default=false).
     hideReadingTime = false
 
-    # Changes sidebar background and link/accent colours.
+    # Changes navbar background and link/accent colours.
     theme = "theme-base-darkblue"
 
     # Optional additional custom CSS file URL, will override other styles.
     # customCSS = ""
 
-    # Displays under the author name in the sidebar, keep it short.
-    # You can use markdown here.
+    # Displays under the title, keep it short. You can use markdown here.
     tagline = "A collection of articles about Linux, Emacs, coding and music."
 
     # Text for the top menu link, which goes the root URL for the site (default=Blog).
     home = "Blog"
 
-    # Metadata used to drive integrations.
-    gravatarHash = ""
-
-    # Sidebar social links, these must be full URLs.
+    # Navbar social links, these must be full URLs.
     github = ""
     bitbucket = ""
     stackOverflow = ""
@@ -127,7 +123,7 @@ paginate = 30
     # Privacy statement link.
     privacyPolicy = "https://www.iubenda.com/privacy-policy/76967501"
 
-# Additional menu entries in sidebar.
+# Additional menu entries in navbar.
 [[menu.main]]
     url = "/posts/"
     name = "Posts"
@@ -138,7 +134,7 @@ paginate = 30
 ### Tips
 
 * Pages where you specify `menu = "main"` in the front matter will be linked in
-  the sidebar just below the `Blog` link.
+  the navbar just below the `Blog` link.
 * Use the exact permalink format above to maintain old links if migrating from
   Jekyll/Octopress.
 <!-- * Change the favicon by providing your own as `static/favicon.png` in your site directory. -->
@@ -153,7 +149,7 @@ paginate = 30
 * No Google Analytics.
 * Privacy statement and policy (check out [Iubenda](https://www.iubenda.com/en/)).
 * Cookie consent message/warning (see [CookieConsent](https://cookieconsent.insites.com/))
-* Sidebar link layout and footer format changes.
+* Navbar link layout and footer format changes.
 * [FontAwesome](http://fortawesome.github.io/Font-Awesome) social links.
 * [Academicons](https://github.com/jpswalsh/academicons).
 * ...many other small layout tweaks!

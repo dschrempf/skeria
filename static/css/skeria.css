@@ -8,8 +8,6 @@ html {
 }
 
 html {
-  /* Relative position to set sidebar height to page height on small displays. */
-  position: relative;
   font-size: 1em;
   font-family: 'Noto Serif', serif;
   line-height: 1.5;
@@ -221,12 +219,6 @@ input[type=text]:focus {
   text-align: center;
 }
 
-@media (min-width:48em) {
-  .topbar {
-    display: none;
-  }
-}
-
 .topbar a {
   color: #fff
 }
@@ -256,12 +248,6 @@ input[type=text]:focus {
   text-align: center;
 }
 
-@media (min-width:48em) {
-  .bottombar {
-    display: none;
-  }
-}
-
 .bottombar a {
   color: #fff
 }
@@ -275,79 +261,6 @@ input[type=text]:focus {
 
 .bottombar-nav-item {
   margin: 0.5em;
-}
-
-/******************************************************************************/
-/* Sidebar. */
-
-/* We have to use two different ways of positioning the sidebar, since for
-   displays with low height, fixed positioning is not possible. */
-
-.sidebar {
-  color: rgba(255,255,255,.5);
-  background-color: #444c57;
-  width: 20em;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-@media (max-height:42em) {
-  .sidebar {
-    position: absolute;
-    min-height: 42em;
-  }
-  .sidebar-sticky {
-    margin: 4em 0em 0em 0em;
-    padding: 0em 2em 0em 2em;
-  }
-}
-
-@media (min-height:42em) {
-  .sidebar {
-    position: fixed;
-    display: flex;
-  }
-  .sidebar-sticky {
-    padding: 1em 2em 1em 2em;
-    align-self: flex-end;
-  }
-}
-
-@media (max-width:48em) {
-  .sidebar {
-    display: none;
-  }
-}
-
-.sidebar a {
-  color: #fff
-}
-
-
-.sidebar-about img {
-  margin: 1.5em auto 1em;
-  width: 150px;
-  height: 150px
-}
-
-.sidebar-about h1 {
-  color: #fff;
-  margin-top: 0.5em;
-  margin-top: 0.5em;
-}
-
-.sidebar-nav {
-  padding: 0;
-  list-style: none;
-  display: inline-block
-}
-
-.sidebar-nav-item {
-  display: block;
-  line-height: 1.75;
-  text-align: left
 }
 
 /******************************************************************************/
