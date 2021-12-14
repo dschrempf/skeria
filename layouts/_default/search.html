@@ -1,5 +1,7 @@
 {{ define "footerfiles" }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.3/fuse.min.js"></script>
+<!-- The search script only works with these specific script versions and breaks with newer version. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
 <script src="{{ "js/search.js" | absURL }}"></script>
 {{ end }}
@@ -13,7 +15,6 @@
                 <input type="text" id="search-query" name="s"/>
             </form>
             <div id="search-results">
-                <!-- <h3>Matching pages</h3> -->
             </div>
         </div>
         <!-- This template is sucked in by search.js and appended to the search-results div above.
