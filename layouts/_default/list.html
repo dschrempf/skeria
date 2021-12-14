@@ -20,9 +20,9 @@
       <table>
           {{ range .Data.Pages }}
           <tr>
+              <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
               <td><time style="white-space: nowrap;">
                   {{ .Date.Format "2006, Jan 2" }}</time>&nbsp;&nbsp;</td>
-              <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
           </tr>
           {{ end }}
       </table>
