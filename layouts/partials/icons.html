@@ -1,16 +1,16 @@
 <div class="icons">
-    <span class="icons-item"> {{ with .Site.Params.github }}<a href="{{ . }}" target="_blank"><i class="fab fa-github"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ with .Site.Params.bitbucket }}<a href="{{ . }}" target="_blank"><i class="fab fa-bitbucket fa-1x"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ with .Site.Params.stackOverflow }}<a href="{{ . }}" target="_blank"><i class="fab fa-stack-overflow fa-1x"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ with .Site.Params.linkedin }}<a href="{{ . }}" target="_blank"><i class="fab fa-linkedin fa-1x"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ with .Site.Params.googleplus }}<a href="{{ . }}" target="_blank"><i class="fab fa-google-plus fa-1x"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ with .Site.Params.facebook }}<a href="{{ . }}" target="_blank"><i class="fab fa-facebook fa-1x"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ with .Site.Params.twitter }}<a href="{{ . }}" target="_blank"><i class="fab fa-twitter fa-1x"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ with .Site.Params.youtube }}<a href="{{ . }}" target="_blank"><i class="fab fa-youtube fa-1x"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ with .Site.Params.orcid }}<a href="{{ . }}" target="_blank"><i class="ai ai-orcid ai-1x"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ with .Site.Params.email }}<a href="{{ . }}"><i class="fas fa-envelope fa-1x"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ with .Site.Params.gpgkey }}<a href="{{ . }}"><i class="fas fa-key fa-1x"></i></a>{{ end }}</span>
-    <span class="icons-item"> {{ if .Site.Params.rss }}<a href="{{ "/index.xml" | absURL }}" type="application/rss+xml"><i class="fas fa-rss fa-3x"></i></a>{{ end }}</span>
+    {{ with .Site.Params.github }}        <span class="icons-item"> <a href="{{ . }}" target="_blank"><i class="fab fa-github"></i></a>                                   </span> {{ end }}
+    {{ with .Site.Params.bitbucket }}     <span class="icons-item"> <a href="{{ . }}" target="_blank"><i class="fab fa-bitbucket fa-1x"></i></a>                          </span> {{ end }}
+    {{ with .Site.Params.stackOverflow }} <span class="icons-item"> <a href="{{ . }}" target="_blank"><i class="fab fa-stack-overflow fa-1x"></i></a>                     </span> {{ end }}
+    {{ with .Site.Params.linkedin }}      <span class="icons-item"> <a href="{{ . }}" target="_blank"><i class="fab fa-linkedin fa-1x"></i></a>                           </span> {{ end }}
+    {{ with .Site.Params.googleplus }}    <span class="icons-item"> <a href="{{ . }}" target="_blank"><i class="fab fa-google-plus fa-1x"></i></a>                        </span> {{ end }}
+    {{ with .Site.Params.facebook }}      <span class="icons-item"> <a href="{{ . }}" target="_blank"><i class="fab fa-facebook fa-1x"></i></a>                           </span> {{ end }}
+    {{ with .Site.Params.twitter }}       <span class="icons-item"> <a href="{{ . }}" target="_blank"><i class="fab fa-twitter fa-1x"></i></a>                            </span> {{ end }}
+    {{ with .Site.Params.youtube }}       <span class="icons-item"> <a href="{{ . }}" target="_blank"><i class="fab fa-youtube fa-1x"></i></a>                            </span> {{ end }}
+    {{ with .Site.Params.orcid }}         <span class="icons-item"> <a href="{{ . }}" target="_blank"><i class="ai ai-orcid ai-1x"></i></a>                               </span> {{ end }}
+    {{ with .Site.Params.email }}         <span class="icons-item"> <a href="{{ . }}"><i class="fas fa-envelope fa-1x"></i></a>                                           </span> {{ end }}
+    {{ with .Site.Params.gpgkey }}        <span class="icons-item"> <a href="{{ . }}"><i class="fas fa-key fa-1x"></i></a>                                                </span> {{ end }}
+    {{ if .Site.Params.rss }}             <span class="icons-item"> <a href="{{ "/index.xml" | absURL }}" type="application/rss+xml"><i class="fas fa-rss fa-3x"></i></a> </span> {{ end }}
 </div>
 
 {{ if .Site.Params.flattr }}
