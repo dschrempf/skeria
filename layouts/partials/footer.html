@@ -2,8 +2,8 @@
     <p>
         &copy; {{ now.Format "2006" }} {{ .Site.Author.name }}, <a href="{{ "/license/" | absURL }}">License</a><br/>
         Powered by <a href="https://gohugo.io">Hugo</a>, <a href="https://ox-hugo.scripter.co/">ox-hugo</a> and <a href="https://github.com/dschrempf/skeria">Skeria</a><br/>
-        {{ with .Site.Params.privacyPolicy }}
-        <a href="{{ . }}" class="" title="Privacy policy">Privacy policy</a>
+        {{ with .Site.Params.privacyNotice }}
+        <a href="{{ . }}" class="" title="Privacy notice">Privacy notice</a>
         {{ end }}
     </p>
 </div>
