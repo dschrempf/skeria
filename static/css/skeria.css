@@ -159,9 +159,9 @@ tbody tr:nth-child(odd) th {
 }
 
 /******************************************************************************/
-/* Quotes */
+/* Blocks */
 
-blockquote {
+blockquote, .blockemph {
   color: #666;
   border-left: 0.2em solid #eee;
   margin: 0.8em 1em;
@@ -169,15 +169,19 @@ blockquote {
 }
 
 @media (max-width: 48em) {
-  blockquote {
+  blockquote, .blockemph {
     padding-right: 0.8em;
   }
 }
 
 @media (min-width: 48em) {
-  blockquote {
+  blockquote, .blockemph {
     padding-right: 3em;
   }
+}
+
+.blockemph {
+  font-style: italic;
 }
 
 /******************************************************************************/
