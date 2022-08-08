@@ -9,9 +9,9 @@
             </h1>
             <span class="post-date">
                 {{ .Date.Format "Jan 2, 2006" }}
-                &middot; {{ .ReadingTime }} minute read
+                &nbsp;&middot;&nbsp; {{ .ReadingTime }} minute read
                 {{ if isset .Params "categories" }}
-                &middot;
+                &nbsp;&middot;&nbsp;
                 {{ range .Params.categories }}
                 <a class="label" href="{{ "/" | absURL }}{{ . | urlize }}">{{ . }}</a>
                 {{ end }}
