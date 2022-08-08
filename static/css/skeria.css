@@ -336,3 +336,11 @@ input[type=text]:focus {
   margin-bottom: 1em;
   color: #7a7a7a;
 }
+
+/******************************************************************************/
+/* Other class selectors. */
+
+/* Useful to create right aligned tables. */
+.right-aligned {
+  text-align: right;
+}
