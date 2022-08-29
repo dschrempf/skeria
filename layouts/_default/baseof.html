@@ -1,4 +1,6 @@
-<!-- Only use https://cdnjs.com/. Check for updates regularly. -->
+<!-- Only use static content -->
+
+<!-- Download from https://cdnjs.com/. Check for updates regularly. -->
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
@@ -18,12 +20,13 @@
         <link rel="stylesheet" href="{{ "/css/skeria.css" | absURL }}">
 
         <!-- Fonts. -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+        <!-- None. -->
 
         <!-- Icons. -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" />
+        <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css -->
+        <link rel="stylesheet" href="{{ "css/font.awesome.6.1.2.all.min.css" | absURL }}" />
+        <!-- https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css -->
+        <link rel="stylesheet" href="{{ "css/academicons.1.9.2.min.css" | absURL }}" />
     </head>
 
     <body>
@@ -35,7 +38,8 @@
         {{ end }}
 
         <!-- Mathematical formulas. -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-svg.min.js" integrity="sha512-9irB0qyXMAf4xUF5UEVOhb4NMCWo7xeKakVbl0lfJ09HyhrplRCqTFMtaW6lP7G0IbHfIcmSo3dFZrWcrsGnOA==" crossorigin="anonymous"></script>
+        <!-- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-svg.min.js -->
+        <script src="{{ "js/mathjax.3.2.2.tex-svg.min.js" | absURL }}"></script>
 
         {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
         {{ partial "bottombar.html" . }}
