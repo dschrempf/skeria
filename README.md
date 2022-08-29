@@ -136,8 +136,10 @@ All feedback is welcome! Head over to the [issue tracker](https://github.com/dsc
 
 ### License
 
-Open sourced under the [MIT license](LICENSE).
+Open sourced under the [MIT License](LICENSE).
 
 #### External libraries
 
-- [MathJax](https://github.com/mathjax/MathJax), [Apache License 2.0](LICENSE-MathJax)
+- [MathJax](https://github.com/mathjax/MathJax); [Apache License 2.0](LICENSE-MathJax)
+- Academic icons; [SIL OFL 1.1 License](LICENSE-AcademicIcons-Font), [MIT
+  License](LICENSE), and [CC BY 3.0 License](LICENSE-AcademicIcons-Docs). 
