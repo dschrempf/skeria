@@ -137,3 +137,7 @@ All feedback is welcome! Head over to the [issue tracker](https://github.com/dsc
 ### License
 
 Open sourced under the [MIT license](LICENSE).
+
+#### External libraries
+
+- [MathJax](https://github.com/mathjax/MathJax), [Apache License 2.0](LICENSE-MathJax)
