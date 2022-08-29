@@ -142,10 +142,6 @@ Open sourced under the [MIT License](LICENSE).
 
 Content:
 - [MathJax](https://github.com/mathjax/MathJax); [Apache License 2.0](LICENSE-MathJax).
-- [Academic icons](https://jpswalsh.github.io/academicons/); [SIL OFL 1.1
-  License](LICENSE-AcademicIcons-Font), [MIT
-  License](LICENSE-AcademicIcons-Icons), and [CC BY 3.0
-  License](LICENSE-AcademicIcons-Docs).
 - [Font Awesome Free](https://fontawesome.com/); [License](LICENSE-FontAwesomeFree).
 
 Search:
