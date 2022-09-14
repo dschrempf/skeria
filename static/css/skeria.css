@@ -26,7 +26,10 @@ body {
 /* Links. */
 
 a {
-  color: #00308F;
+  /* color: #444c57; */
+  /* color: #3873b3; */
+  /* color: #2c5a8c; */
+  color: #21446a;
   text-decoration: none;
 }
 
