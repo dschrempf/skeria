@@ -335,12 +335,15 @@ input[type=text]:focus {
   color: #444c57;
   margin-top: 1em;
   margin-bottom: 0em;
+
+.date {
+  color: #7a7a7a;
 }
 
 .post-date {
+  color: #7a7a7a;
   display: block;
   margin-bottom: 1em;
-  color: #7a7a7a;
 }
 
 /******************************************************************************/
