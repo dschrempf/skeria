@@ -96,6 +96,7 @@ paginate = 30
     linkedin = ""
     googleplus = ""
     facebook = ""
+    mastodon = ""
     youtube = ""
     orcid = ""
     flattr = ""
