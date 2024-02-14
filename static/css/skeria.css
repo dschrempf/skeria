@@ -115,11 +115,11 @@ code {
 }
 
 .highlight {
-  overflow: scroll;
 }
 
 pre {
   padding: 0.5em;
+  overflow: auto;
 }
 
 .label {
