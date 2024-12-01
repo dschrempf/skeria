@@ -52,7 +52,6 @@ disqusShortname = "elias"
 MetaDataFormat = "toml"
 
 theme = "skeria"
-paginate = 30
 
 [outputs]
     home = ["HTML", "JSON"]
@@ -79,6 +78,9 @@ paginate = 30
     tabWidth = 2
   [markup.goldmark.renderer]
     unsafe= true
+
+[pagination]
+  pagerSize = 30
 
 # All parameters below here are optional and can be mixed and matched.
 [params]
