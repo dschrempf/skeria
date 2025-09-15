@@ -6,7 +6,7 @@ Skeria
 - Jekyll "[Hyde](https://github.com/poole/hyde)" theme;
 - Hugo "[Hyde-X](https://guthub.com/zyro/hyde-x)" theme.
 
-Please visit the [live site](https://dschrempf.github.io/) using Skeria and the
+Please visit the [live site](https://blog.composef.org/) using Skeria and the
 corresponding [source code](https://github.com/dschrempf/blog).
 
 ### Installation

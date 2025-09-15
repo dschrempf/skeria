@@ -8,11 +8,11 @@ features = ["blog", "technical", "personal"]
 min_version = 0.14
 
 [author]
-    name = "Dominik Schrempf"
-    homepage = "https://dschrempf.github.io/"
+name = "Dominik Schrempf"
+homepage = "https://blog.composef.org/"
 
 # If Porting existing theme
 [original]
-    author =  "poole"
-    homepage = "http://hyde.getpoole.com"
-    repo = "https://github.com/poole/hyde"
+author = "poole"
+homepage = "http://hyde.getpoole.com"
+repo = "https://github.com/poole/hyde"
