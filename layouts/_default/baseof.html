@@ -25,7 +25,7 @@
         <!-- Icons. -->
         <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css -->
         <!-- Fonts have to be updated separately (woff2 files). -->
-        <link rel="stylesheet" href="{{ "css/font.awesome.6.1.2.all.min.css" | absURL }}" />
+        <link rel="stylesheet" href="{{ "css/font.awesome.7.2.0.all.min.css" | absURL }}" />
     </head>
 
     <body>
@@ -38,7 +38,22 @@
 
         <!-- Mathematical formulas. -->
         <!-- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-svg.min.js -->
-        <script src="{{ "js/mathjax.3.2.2.tex-svg.min.js" | absURL }}"></script>
+        <script>
+        MathJax = {
+          options: {
+            menuOptions: {
+              settings: {
+                enrich: false,    
+                collapsible: false,  
+                speech: false,       
+                braille: false,      
+                assistiveMml: false, 
+              }
+            }
+          }
+        };
+        </script>
+        <script src="{{ "js/mathjax.4.0.0.tex-svg.min.js" | absURL }}"></script>
 
         {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
         {{ partial "bottombar.html" . }}
