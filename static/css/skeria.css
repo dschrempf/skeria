@@ -10,8 +10,8 @@ html {
 
 html {
   font-size: 1em;
-  font-family: 'Inter', system-ui, sans-serif;
-  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.65;
 }
 
 body {
@@ -43,8 +43,9 @@ a:focus, a:hover {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1.0em;
   margin-bottom: 0.5em;
-  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-family: 'Lora Variable', serif;
   font-weight: 400;
+  line-height: 1.65;
   color: #000;
 }
 
@@ -97,7 +98,9 @@ dd {
 /* Inline code, timestamps, and labels. */
 
 code, pre, .timestamp {
-  font-family: 'Inconsolata', monospace;
+  font-family: 'JetBrains mono Variable', monospace;
+  font-size: 1em;
+  letter-spacing: -0.01em;
 }
 
 code {
