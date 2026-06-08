@@ -10,7 +10,7 @@ html {
 
 html {
   font-size: 1em;
-  font-family: 'Noto Serif', serif;
+  font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.5;
 }
 
@@ -43,6 +43,7 @@ a:focus, a:hover {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1.0em;
   margin-bottom: 0.5em;
+  font-family: 'Inter Tight', system-ui, sans-serif;
   font-weight: 400;
   color: #000;
 }

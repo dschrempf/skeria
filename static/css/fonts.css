@@ -1,0 +1,36 @@
+/******************************************************************************/
+/* Self-hosted fonts. */
+
+/* Inter — body text. Variable font (weight axis 100–900). */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../webfonts/inter-latin-wght-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../webfonts/inter-latin-wght-italic.woff2") format("woff2");
+}
+
+/* Inter Tight — headlines and display. Variable font (weight axis 100–900). */
+@font-face {
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../webfonts/inter-tight-latin-wght-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../webfonts/inter-tight-latin-wght-italic.woff2") format("woff2");
+}
