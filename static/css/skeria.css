@@ -262,6 +262,20 @@ input[type=text]:focus {
   padding-right: 0.4em;
 }
 
+/* Inline icon row used as a subtitle within page content (e.g. the social
+   icons under the name on the about page). Lays the icons out flush-left with
+   even spacing so the row lines up with surrounding text, without affecting
+   the centred .icons rows in the topbar/bottombar. */
+.icons-subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
+
+.icons-subtitle .icons-item {
+  padding: 0;
+}
+
 /******************************************************************************/
 /* Content. */
 
