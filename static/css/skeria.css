@@ -26,9 +26,6 @@ body {
 /* Links. */
 
 a {
-  /* color: #444c57; */
-  /* color: #3873b3; */
-  /* color: #2c5a8c; */
   color: #21446a;
   text-decoration: none;
 }
@@ -65,12 +62,6 @@ h4,
 h5,
 h6 {
   font-size: 1em
-}
-
-/******************************************************************************/
-/* Lead (text under title). */
-
-.lead {
 }
 
 /******************************************************************************/
@@ -121,9 +112,6 @@ code, pre, .timestamp {
   white-space: nowrap;
 }
 
-.highlight {
-}
-
 pre {
   padding: 0.5em;
   overflow: auto;
@@ -154,7 +142,6 @@ a.label:focus, a.label:hover {
 img {
   display: block;
   max-width: 100%;
-  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -222,34 +209,27 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-  border-radius: 4px;
   border: 1px solid #666;
 }
 
 /******************************************************************************/
-/* Containers. */
+/* Topbar and bottombar (identical styling). */
 
-.container {
-}
-
-/******************************************************************************/
-/* Topbar. */
-
-.topbar {
+.topbar, .bottombar {
   color: rgba(255,255,255,.5);
   background-color: #444c57;
   text-align: center;
 }
 
-.topbar a {
+.topbar a, .bottombar a {
   color: #fff;
 }
 
-.topbar p {
+.topbar p, .bottombar p {
   margin: 0;
 }
 
-.topbar-sticky {
+.topbar-sticky, .bottombar-sticky {
   padding: 0.5em 2em 0.5em 2em;
 }
 
@@ -261,28 +241,6 @@ input[type=text]:focus {
 
 .topbar-nav-item {
   margin: 0.7em;
-}
-
-
-/******************************************************************************/
-/* Bottombar. */
-
-.bottombar {
-  color: rgba(255,255,255,.5);
-  background-color: #444c57;
-  text-align: center;
-}
-
-.bottombar a {
-  color: #fff;
-}
-
-.bottombar p {
-  margin: 0;
-}
-
-.bottombar-sticky {
-  padding: 0.5em 2em 0.5em 2em;
 }
 
 /******************************************************************************/
@@ -344,6 +302,24 @@ input[type=text]:focus {
   margin-bottom: 2em;
   margin-left: 2em;
   margin-right: 2em;
+}
+
+/* Borderless, full-width listing of posts (section and taxonomy pages). */
+.post-list table,
+.post-list td,
+.post-list th {
+  border: none;
+}
+
+.post-list td,
+.post-list th {
+  padding: 5px 0;
+  vertical-align: top;
+}
+
+.post-list tbody tr:nth-child(odd) td,
+.post-list tbody tr:nth-child(odd) th {
+  background-color: #fff;
 }
 
 .post-title,
