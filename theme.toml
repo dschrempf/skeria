@@ -11,7 +11,7 @@ min_version = 0.14
 name = "Dominik Schrempf"
 homepage = "https://blog.composef.org/"
 
-# If Porting existing theme
+# Ported from and inspired by the Hyde theme.
 [original]
 author = "poole"
 homepage = "http://hyde.getpoole.com"
