@@ -1,27 +1,15 @@
 {{ define "main" }}
 <div class="content container">
     <div class="post-list">
-      <h1 class="post-title">{{ humanize .Section }}</h1>
-      <br>
-      <style>
-       table {
-           border: none;
-       }
-       td, th {
-           border: none;
-           padding: 5px 0px 5px 0px;
-           vertical-align: top;
-       }
-       tbody tr:nth-child(odd) td,
-       tbody tr:nth-child(odd) th {
-           background-color: white;
-       }
-      </style>
+      {{/* Term pages carry the term in .Title; for section/taxonomy pages use
+           the humanized section name (avoids Hugo's pluralized auto-title, e.g.
+           "Linuxes"). */}}
+      <h1 class="post-title">{{ if eq .Kind "term" }}{{ .Title }}{{ else }}{{ humanize .Section }}{{ end }}</h1>
       <table>
-          {{ range .Data.Pages }}
+          {{ range .Pages }}
           <tr>
               <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
-              <td style="text-align: right;"><time class="date" style="white-space: nowrap;">{{ .Date.Format "January 02, 2006" }}</time></td>
+              <td style="text-align: right;"><time class="date" datetime="{{ .Date.Format "2006-01-02" }}" style="white-space: nowrap;">{{ .Date.Format "January 02, 2006" }}</time></td>
           </tr>
           {{ end }}
       </table>
