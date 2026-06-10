@@ -12,6 +12,9 @@ html {
   font-size: 1em;
   font-family: 'Inter', sans-serif;
   line-height: 1.65;
+  /* Always reserve space for the scrollbar so content doesn't shift
+     horizontally between pages that scroll and pages that don't. */
+  scrollbar-gutter: stable;
 }
 
 body {
