@@ -1,0 +1,10 @@
+<span class="post-date">
+    <time class="date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    &nbsp;&middot;&nbsp; {{ .ReadingTime }} minute{{ if ne .ReadingTime 1 }}s{{ end }} read
+    {{ with .Params.categories }}
+    &nbsp;&middot;&nbsp;
+    {{ range . }}
+    <a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+    {{ end }}
+    {{ end }}
+</span>

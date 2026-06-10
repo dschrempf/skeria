@@ -7,18 +7,9 @@
             <h1 class="post-title">
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
             </h1>
-            <span class="post-date">
-                {{ .Date.Format "Jan 2, 2006" }}
-                &nbsp;&middot;&nbsp; {{ .ReadingTime }} minute read
-                {{ if isset .Params "categories" }}
-                &nbsp;&middot;&nbsp;
-                {{ range .Params.categories }}
-                <a class="label" href="{{ "/" | absURL }}{{ . | urlize }}">{{ . }}</a>
-                {{ end }}
-                {{ end }}
-            </span>
+            {{ partial "post-meta.html" . }}
             {{ .Summary }}
-            <a href="{{ .Permalink }}">&nbsp;Read on &hellip;</a>
+            {{ if .Truncated }}<a href="{{ .Permalink }}">&nbsp;Read on &hellip;</a>{{ end }}
         </div>
         {{ end }}
     </div>
