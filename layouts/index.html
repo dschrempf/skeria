@@ -8,7 +8,7 @@
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
             </h1>
             {{ partial "post-meta.html" . }}
-            {{ .Summary }}
+            {{ partial "post-summary.html" (dict "Post" . "List" $) }}
             {{ if .Truncated }}<a href="{{ .Permalink }}">&nbsp;Read on &hellip;</a>{{ end }}
         </div>
         {{ end }}

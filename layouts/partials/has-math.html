@@ -1,0 +1,11 @@
+{{- /* Reports whether the given HTML contains any delimiter MathJax processes
+       by default: \( \) inline, \[ \] and $$ display, and bare LaTeX
+       environments \begin{...} (processEnvironments defaults to true). This is
+       the single source of truth for "does this need MathJax?" -- baseof.html
+       uses it on a page's own .Content, and post-summary.html on summaries. */ -}}
+{{- $html := . -}}
+{{- return (or
+      (strings.Contains $html "\\(")
+      (strings.Contains $html "\\[")
+      (strings.Contains $html "$$")
+      (strings.Contains $html "\\begin{")) -}}

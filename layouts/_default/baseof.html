@@ -47,20 +47,14 @@
 
         <!-- Mathematical formulas. -->
         <!-- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-svg.min.js -->
-        <!-- Loaded only on pages that actually contain math. We scan the -->
-        <!-- rendered HTML the browser sees for the exact triggers MathJax -->
-        <!-- recognizes by default: \( \) inline, \[ \] and $$ display, and -->
-        <!-- bare LaTeX environments \begin{...} (processEnvironments=true). -->
-        <!-- On the home page the body is post *summaries*, not .Content, so -->
-        <!-- we also scan the summaries of the posts on this paginator page. -->
-        <!-- (Section/term list pages render only links, so .Content suffices.) -->
-        {{ $c := .Content }}
-        {{ if .IsHome }}
-        {{ range (.Paginate (where .Site.RegularPages "Type" "post")).Pages }}
-        {{ $c = print $c .Summary }}
-        {{ end }}
-        {{ end }}
-        {{ if or (strings.Contains $c "\\(") (strings.Contains $c "\\[") (strings.Contains $c "$$") (strings.Contains $c "\\begin{") }}
+        <!-- Loaded only on pages that actually render math. A page needs it if -->
+        <!-- its own .Content contains a MathJax delimiter, OR if a listing on -->
+        <!-- it rendered a post summary that does. Listings flag the page via -->
+        <!-- the post-summary.html partial (.Scratch "needsMath"), which runs -->
+        <!-- inside the "main" block above, before this check. This keeps -->
+        <!-- detection automatic for any current/future page that paginates -->
+        <!-- post summaries, with no false positives on link-only list pages. -->
+        {{ if or (partial "has-math.html" .Content) (.Scratch.Get "needsMath") }}
         <script>
         MathJax = {
           options: {

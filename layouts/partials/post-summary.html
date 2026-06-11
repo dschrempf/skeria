@@ -1,0 +1,16 @@
+{{- /* Renders a post summary inside a listing AND flags the listing page so
+       baseof.html loads MathJax when a *shown* summary contains math.
+
+       Use this for every post summary you list (the home page today, and any
+       future paginated section/taxonomy listing): math detection then stays
+       automatic and accurate -- it fires only where a summary with math is
+       actually rendered, never on link-only list pages.
+
+       Call as: {{ partial "post-summary.html" (dict "Post" . "List" $) }}
+         .Post -- the post being summarised (the current range item)
+         .List -- the listing page being rendered (the template's $ context) */ -}}
+{{- $summary := .Post.Summary -}}
+{{- if partial "has-math.html" $summary -}}
+  {{- .List.Scratch.Set "needsMath" true -}}
+{{- end -}}
+{{- $summary -}}
