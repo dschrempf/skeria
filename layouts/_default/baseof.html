@@ -16,17 +16,25 @@
         <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
         <meta name="keywords" content="{{ range $index, $element := .Keywords }}{{ if gt $index 0 }},{{ end }}{{ . }}{{ else }}{{ .Site.Params.defaultKeywords }}{{ end }}">
 
-        <!-- CSS of site. -->
-        <link rel="stylesheet" href="{{ "/css/skeria.css" | absURL }}">
+        <!-- Preload the two above-the-fold body fonts (Inter + Lora, normal). -->
+        <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ "/webfonts/inter-latin-wght-normal.woff2" | absURL }}">
+        <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ "/webfonts/lora-latin-wght-normal.woff2" | absURL }}">
 
-        <!-- Fonts. -->
-        <!-- Self-hosted Inter / Inter Tight (variable woff2 in static/webfonts). -->
-        <link rel="stylesheet" href="{{ "/css/fonts.css" | absURL }}">
+        <!-- CSS of site (skeria.css + fonts.css), concatenated and fingerprinted -->
+        <!-- for cache-busting + Subresource Integrity. Kept under /css/ so the -->
+        <!-- ../webfonts/ URLs in fonts.css still resolve correctly. -->
+        {{ $skeria := resources.Get "css/skeria.css" }}
+        {{ $fonts := resources.Get "css/fonts.css" }}
+        {{ with (slice $skeria $fonts | resources.Concat "css/skeria.bundle.css" | fingerprint) }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+        {{ end }}
 
         <!-- Icons. -->
         <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css -->
         <!-- Fonts have to be updated separately (woff2 files). -->
-        <link rel="stylesheet" href="{{ "css/font.awesome.7.2.0.all.min.css" | absURL }}" />
+        {{ with resources.Get "css/font.awesome.7.2.0.all.min.css" | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" />
+        {{ end }}
     </head>
 
     <body>
@@ -39,22 +47,39 @@
 
         <!-- Mathematical formulas. -->
         <!-- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-svg.min.js -->
+        <!-- Loaded only on pages that actually contain math. We scan the -->
+        <!-- rendered HTML the browser sees for the exact triggers MathJax -->
+        <!-- recognizes by default: \( \) inline, \[ \] and $$ display, and -->
+        <!-- bare LaTeX environments \begin{...} (processEnvironments=true). -->
+        <!-- On the home page the body is post *summaries*, not .Content, so -->
+        <!-- we also scan the summaries of the posts on this paginator page. -->
+        <!-- (Section/term list pages render only links, so .Content suffices.) -->
+        {{ $c := .Content }}
+        {{ if .IsHome }}
+        {{ range (.Paginate (where .Site.RegularPages "Type" "post")).Pages }}
+        {{ $c = print $c .Summary }}
+        {{ end }}
+        {{ end }}
+        {{ if or (strings.Contains $c "\\(") (strings.Contains $c "\\[") (strings.Contains $c "$$") (strings.Contains $c "\\begin{") }}
         <script>
         MathJax = {
           options: {
             menuOptions: {
               settings: {
-                enrich: false,    
-                collapsible: false,  
-                speech: false,       
-                braille: false,      
-                assistiveMml: false, 
+                enrich: false,
+                collapsible: false,
+                speech: false,
+                braille: false,
+                assistiveMml: false,
               }
             }
           }
         };
         </script>
-        <script src="{{ "js/mathjax.4.0.0.tex-svg.min.js" | absURL }}"></script>
+        {{ with resources.Get "js/mathjax.4.0.0.tex-svg.min.js" | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+        {{ end }}
+        {{ end }}
 
         {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
         {{ partial "bottombar.html" . }}
