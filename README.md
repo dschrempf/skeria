@@ -142,6 +142,12 @@ Open sourced under the [MIT License](LICENSE).
 
 #### External libraries
 
+These are vendored, not authored here: the JS/CSS live under `assets/vendor/`
+and the webfonts under `static/webfonts/`. Refresh them all with
+[`./update-vendor.sh`](update-vendor.sh), which downloads pinned versions from
+[jsDelivr](https://www.jsdelivr.com/). Everything else under `assets/`
+(`skeria.css`, `fonts.css`, `search.js`) is ours.
+
 Content:
 - [MathJax](https://github.com/mathjax/MathJax); [Apache License 2.0](LICENSE-MathJax).
 - [Font Awesome Free](https://fontawesome.com/); [License](LICENSE-FontAwesomeFree).
@@ -150,3 +156,8 @@ Search:
 - [JQuery](https://jquery.com/); [MIT License](LICENSE-JQuery).
 - [MarkJs](https://markjs.io/); [MIT License](LICENSE-MarkJs).
 - [FuseJs](https://fusejs.io/); [Apache License 2.0](LICENSE-FuseJs).
+
+Fonts ([Fontsource](https://fontsource.org/), self-hosted):
+- [Inter](https://fontsource.org/fonts/inter); SIL OFL 1.1 (body text).
+- [Lora](https://fontsource.org/fonts/lora); SIL OFL 1.1 (headlines/display).
+- [JetBrains Mono](https://fontsource.org/fonts/jetbrains-mono); SIL OFL 1.1 (code).

@@ -1,6 +1,7 @@
 <!-- Only use static content -->
 
-<!-- Download from https://cdnjs.com/. Check for updates regularly. -->
+<!-- Vendored assets (Font Awesome, MathJax, jQuery, Fuse, mark.js) live under -->
+<!-- assets/vendor/ and static/webfonts/. Refresh them with ./update-vendor.sh. -->
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
@@ -29,10 +30,8 @@
         <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
         {{ end }}
 
-        <!-- Icons. -->
-        <!-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css -->
-        <!-- Fonts have to be updated separately (woff2 files). -->
-        {{ with resources.Get "css/font.awesome.7.2.0.all.min.css" | fingerprint }}
+        <!-- Icons. Font Awesome (CSS + its woff2 webfonts); see update-vendor.sh. -->
+        {{ with resources.Get "vendor/css/font.awesome.7.2.0.all.min.css" | fingerprint }}
         <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" />
         {{ end }}
     </head>
@@ -45,8 +44,7 @@
         {{ .Content }}
         {{ end }}
 
-        <!-- Mathematical formulas. -->
-        <!-- https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-svg.min.js -->
+        <!-- Mathematical formulas. MathJax (tex-svg); see update-vendor.sh. -->
         <!-- Loaded only on pages that actually render math. A page needs it if -->
         <!-- its own .Content contains a MathJax delimiter, OR if a listing on -->
         <!-- it rendered a post summary that does. Listings flag the page via -->
@@ -70,7 +68,7 @@
           }
         };
         </script>
-        {{ with resources.Get "js/mathjax.4.0.0.tex-svg.min.js" | fingerprint }}
+        {{ with resources.Get "vendor/js/mathjax.4.0.0.tex-svg.min.js" | fingerprint }}
         <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
         {{ end }}
         {{ end }}
