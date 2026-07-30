@@ -5,7 +5,8 @@ description = "An elegant open source and mobile first theme, extended with new 
 homepage = "https://github.com/dschrempf/skeria"
 tags = ["blog", "technical", "personal"]
 features = ["blog", "technical", "personal"]
-min_version = "0.128.0"
+# 0.158 renamed `languageCode`/`.Language.LanguageCode` to `locale`/`.Language.Locale`.
+min_version = "0.158.0"
 
 [author]
 name = "Dominik Schrempf"

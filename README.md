@@ -47,17 +47,17 @@ possible.
 baseurl = "https://elias.example.page"
 title = "Elias's blog"
 
-languageCode = "en-us"
+# Also becomes <html lang> and the Open Graph locale.
+locale = "en-US"
 disqusShortname = "elias"
 MetaDataFormat = "toml"
 
 theme = "skeria"
 
 [outputs]
-    home = ["HTML", "JSON"]
-
-[author]
-    name = "Elias Schneider"
+    # RSS: the site feed, linked from <head> and the RSS icon.
+    # JSON: the search index.
+    home = ["HTML", "RSS", "JSON"]
 
 [permalinks]
     post = "/blog/:year/:month/:day/:title/"
@@ -84,9 +84,19 @@ theme = "skeria"
 
 # All parameters below here are optional and can be mixed and matched.
 [params]
+    # Shown in the <title>, the footer, and as the author in social metadata.
+    author.name = "Elias Schneider"
+
     # Used when a given page doesn't set its own.
     defaultDescription = "Interesting content."
     defaultKeywords = "Interesting keywords."
+
+    # Social preview image for link previews, relative to the site root. Wants
+    # ~1200x630 px. Override per page with `images` in the front matter.
+    images = ["og-image.png"]
+
+    # Credits the author in Mastodon link previews.
+    fediverseCreator = "@elias@fosstodon.org"
 
     # Displays under the title, keep it short. You can use markdown here.
     tagline = "A collection of articles about Linux, Emacs, coding and music."
@@ -109,8 +119,8 @@ theme = "skeria"
     # GPG key.
     gpgkey = "/gpg_public_key.txt"
 
-    # RSS.
-    rss = false
+    # Show the RSS icon. Requires RSS in [outputs].home above.
+    rss = true
 
     # Privacy statement link.
     privacyPolicy = "https://www.iubenda.com/privacy-policy/76967501"

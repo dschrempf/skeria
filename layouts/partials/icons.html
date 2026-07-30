@@ -9,5 +9,8 @@
     {{ with .Site.Params.googleScholar }} <span class="icons-item"> <a href="{{ . }}" target="_blank" rel="noopener"><i class="fab fa-google"></i></a>                </span> {{ end }}
     {{ with .Site.Params.email }}         <span class="icons-item"> <a href="{{ . }}"><i class="fas fa-envelope"></i></a>                                              </span> {{ end }}
     {{ with .Site.Params.gpgkey }}        <span class="icons-item"> <a href="{{ . }}"><i class="fas fa-key"></i></a>                                                   </span> {{ end }}
-    {{ if .Site.Params.rss }}             <span class="icons-item"> <a href="{{ "/index.xml" | absURL }}" type="application/rss+xml"><i class="fas fa-rss"></i></a>    </span> {{ end }}
+    {{/* The URL comes from the RSS output format, so it stays right if the feed moves — */}}
+    {{/* and the icon disappears if `home` in [outputs] does not include RSS at all. */}}
+    {{ if .Site.Params.rss }}{{ with .Site.Home.OutputFormats.Get "rss" }}
+                                          <span class="icons-item"> <a href="{{ .Permalink }}" type="{{ .MediaType.Type }}"><i class="fas fa-rss"></i></a>              </span> {{ end }}{{ end }}
 </div>

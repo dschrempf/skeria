@@ -1,0 +1,98 @@
+{{/* Title, description, keywords, canonical URL, feed discovery, Open Graph,   */}}
+{{/* Twitter cards and JSON-LD. All of them derive from the variables below, so */}}
+{{/* every fact is stated once — in the page's front matter or in the site      */}}
+{{/* defaults — and never repeated per output format.                          */}}
+
+{{ $author := .Site.Params.author.name }}
+{{ $description := or .Description .Site.Params.defaultDescription }}
+{{ $keywords := or (delimit .Keywords ", ") .Site.Params.defaultKeywords }}
+
+{{/* Social preview image. Open Graph and Twitter both require an absolute URL. */}}
+{{/* Set `images` in front matter or under `[params]`; a bare string works too. */}}
+{{ $image := "" }}
+{{ with or .Params.images .Site.Params.images }}
+    {{ if reflect.IsSlice . }}{{ $image = absURL (index . 0) }}{{ else }}{{ $image = absURL . }}{{ end }}
+{{ end }}
+
+{{/* Only blog posts are articles; `about`, `links`, … are ordinary pages. */}}
+{{ $isArticle := eq .Type "post" }}
+{{ $rfc3339 := "2006-01-02T15:04:05Z07:00" }}
+
+<title>{{ .Title }} &middot; {{ $author }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="keywords" content="{{ $keywords }}">
+
+{{/* Pick one URL per page, so pagers (/page/2/) and any parameterized or */}}
+{{/* uppercase/lowercase variants don't compete as duplicate content.    */}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{/* Let feed readers auto-detect the feed. Pages that have one of their own */}}
+{{/* (home, sections, taxonomies) advertise it; the rest point at the site   */}}
+{{/* feed. Deliberately not `.AlternativeOutputFormats`, which would also    */}}
+{{/* advertise the JSON search index.                                       */}}
+{{ $feed := .OutputFormats.Get "rss" }}
+{{ $feedTitle := cond .IsHome .Site.Title (printf "%s · %s" .Site.Title .Title) }}
+{{ if not $feed }}
+    {{ $feed = .Site.Home.OutputFormats.Get "rss" }}
+    {{ $feedTitle = .Site.Title }}
+{{ end }}
+{{ with $feed }}
+<link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $feedTitle }}">
+{{ end }}
+
+{{/* Open Graph; consumed by Mastodon, Slack, Signal, Facebook, … */}}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:locale" content="{{ replace .Site.Language.Locale "-" "_" }}">
+<meta property="og:type" content="{{ cond $isArticle "article" "website" }}">
+{{ with $image }}<meta property="og:image" content="{{ . }}">{{ end }}
+{{ if $isArticle }}
+<meta property="article:published_time" content="{{ .PublishDate.Format $rfc3339 }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format $rfc3339 }}">
+{{ with .Section }}<meta property="article:section" content="{{ . }}">{{ end }}
+{{ range .Keywords }}<meta property="article:tag" content="{{ . }}">{{ end }}
+{{ end }}
+
+{{/* Twitter cards. Also the fallback several other scrapers try first. */}}
+<meta name="twitter:card" content="{{ cond $image "summary_large_image" "summary" }}">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{ with $image }}<meta name="twitter:image" content="{{ . }}">{{ end }}
+
+{{/* Fediverse servers use this to credit (and link back to) the author. */}}
+{{ with .Site.Params.fediverseCreator }}<meta name="fediverse:creator" content="{{ . }}">{{ end }}
+
+{{/* JSON-LD, for rich search results. Emitted only where there is something */}}
+{{/* real to describe: the site itself, and each post. Built with dict +      */}}
+{{/* jsonify so quoting and escaping are handled by Hugo, not by hand.       */}}
+{{ $person := dict "@type" "Person" "name" $author }}
+{{ with .Site.Params.mastodon }}{{ $person = merge $person (dict "sameAs" (slice .)) }}{{ end }}
+{{ $ld := false }}
+{{ if .IsHome }}
+    {{ $ld = dict
+        "@context" "https://schema.org"
+        "@type" "WebSite"
+        "name" .Site.Title
+        "url" .Permalink
+        "description" $description
+        "author" $person }}
+{{ else if $isArticle }}
+    {{ $ld = dict
+        "@context" "https://schema.org"
+        "@type" "BlogPosting"
+        "headline" .Title
+        "description" $description
+        "url" .Permalink
+        "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+        "datePublished" (.PublishDate.Format $rfc3339)
+        "dateModified" (.Lastmod.Format $rfc3339)
+        "author" $person
+        "publisher" $person }}
+    {{ with .Keywords }}{{ $ld = merge $ld (dict "keywords" (delimit . ", ")) }}{{ end }}
+    {{ with $image }}{{ $ld = merge $ld (dict "image" .) }}{{ end }}
+{{ end }}
+{{ with $ld }}
+<script type="application/ld+json">{{ . | jsonify | safeJS }}</script>
+{{ end }}
